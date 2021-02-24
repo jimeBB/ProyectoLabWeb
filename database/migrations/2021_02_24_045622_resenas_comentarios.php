@@ -19,13 +19,9 @@ class ResenasComentarios extends Migration
         
             $table->integer('resenas_id')->unsigned();
         
-            $table->foreign('comentarios_id')->references('id')->on('comentarios')
+            $table->foreign('comentarios_id')->references('id')->on('comentarios')->onDelete('cascade');
         
-                ->onDelete('cascade');
-        
-            $table->foreign('resenas_id')->references('id')->on('resenas')
-        
-                ->onDelete('cascade');
+            $table->foreign('resenas_id')->references('id')->on('resenas')->onDelete('cascade');
         
         });
     }

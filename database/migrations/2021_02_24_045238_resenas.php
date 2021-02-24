@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Comentarios extends Migration
+class Resenas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,20 @@ class Comentarios extends Migration
      */
     public function up()
     {
-        Schema::create('comentarios', function (Blueprint $table) {
-            $table->id();
+        Schema::create('resenas', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('nombre');
-            $table->string('name');
-            $table->date('fecha');
+            $table->string('titulo');
+            $table->date('fecha_creacion');
+            $table->string('categoria');
             $table->string('texto');
             $table->string('likes');
             $table->timestamps();
+            $table->integer('usuario_id')->unsigned();
+            $table->foreign('usuario_id')->references('id')->on('usuario')->onDelete('cascade');
+            
+    
+
         });
     }
 
@@ -31,6 +37,6 @@ class Comentarios extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comentarios');
+        Schema::dropIfExists('resenas');
     }
 }
