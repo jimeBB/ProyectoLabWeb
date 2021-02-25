@@ -78,7 +78,6 @@ class ComentariosController extends Controller
     public function update(Request $request, Comentario $comentario)
     {
         $arr = $request->input();
-        $comentario = new Comentario();
         $comentario->nombre = $arr['nombre'];
         $comentario->fecha = $arr['fecha'];
         $comentario->texto = $arr['texto'];
