@@ -14,7 +14,7 @@ class ComentariosController extends Controller
     public function index()
     {
         $comentario = Comentario::all();
-        return view('comentarios.crear', ['comentario' => $comentario]);
+        return view('comentarios.index', ['comentario' => $comentario]);
     }
 
     /**
@@ -42,6 +42,7 @@ class ComentariosController extends Controller
         $comentario->texto = $arr['texto'];
         $comentario->likes = $arr['likes'];
         $comentario->save();
+      
         return redirect()->route('comentarios.index');
     }
 
@@ -83,6 +84,7 @@ class ComentariosController extends Controller
         $comentario->texto = $arr['texto'];
         $comentario->likes = $arr['likes'];
         $comentario->save();
+        
         return redirect()->route('comentarios.index');
     }
 
@@ -94,7 +96,7 @@ class ComentariosController extends Controller
      */
     public function destroy(Comentario $comentario)
     {
-        $coin->delete();
+        $comentario->delete();
         return redirect()->route('comentarios.index');
     }
 }
