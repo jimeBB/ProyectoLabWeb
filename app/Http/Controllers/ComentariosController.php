@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comentario;
+use App\Models\Resena;
 
 class ComentariosController extends Controller
 {
@@ -42,7 +43,9 @@ class ComentariosController extends Controller
         $comentario->texto = $arr['texto'];
         $comentario->likes = $arr['likes'];
         $comentario->save();
-      
+        $resenaid = $arr['resenaid'];
+        $resena = Resena::find([$resenaid ]);
+        $comentario->resena()->attach($resena);
         return redirect()->route('comentarios.index');
     }
 
