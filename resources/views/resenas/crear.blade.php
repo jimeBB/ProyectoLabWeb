@@ -19,11 +19,11 @@
     </div><br>
     <div>
         <label for="">Categoría</label>
-        <t type="text" name="categoria">
+        <input type="text" name="categoria">
     </div><br>
      <div>
         <label for="">Texto</label><br>
-        <input type="text" name="texto">
+        <textarea type="text" name="texto"></textarea>
     </div><br>
     <div>
         <label for="">Likes</label>

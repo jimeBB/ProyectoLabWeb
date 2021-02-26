@@ -50,7 +50,7 @@ tr:nth-child(even) {
             <th>Fecha</th>
             <th>Categoria</th>
             <th>Likes</th>
-            <th>Usuario ID</th>
+            <th>Usuario</th>
         </tr>
     </thead>
     <tbody>
@@ -66,4 +66,5 @@ tr:nth-child(even) {
 </table>
 <h1>{{ $resena->titulo }}</h1>
 <p>{{ $resena->texto }} </p>
+<a href="{{ route('comentarios.index') }}">Ver Comentarios</a>
 @endsection

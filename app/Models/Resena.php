@@ -12,4 +12,9 @@ class Resena extends Model
     return $this->belongsToMany(Comentario::class);
         }
     
+
+    public function usuario(){
+    return $this->belongsTo(Usuario::class);
+        }
+    
 }
