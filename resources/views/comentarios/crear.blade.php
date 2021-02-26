@@ -22,6 +22,10 @@
         <input type="text" name="likes">
     </div>
     <div>
+        <label for="">Resena id</label>
+        <input type="text" name="resenaid">
+    </div>
+    <div>
         <input type="submit" value="Store">
     </div>
 </form>
