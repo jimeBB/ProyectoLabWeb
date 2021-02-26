@@ -9,7 +9,7 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 80%;
-  
+
 }
 
 td, th {
@@ -42,6 +42,8 @@ tr:nth-child(even) {
 <h1>Lista de comentarios</h1>
 <p>
     <a href="{{ route('comentarios.create') }}"class="escribir">Crea un comentario</a>
+    <a href="{{ route('usuarios.index') }}" class="escribir">Ver Usuarios</a>
+    <a href="{{ route('resenas.index') }}" class="escribir">Ver Reseñas</a>
 </p>
 <table>
     <thead>

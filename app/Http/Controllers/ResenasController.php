@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Models\Resena;
 use App\Models\Usuario;
@@ -46,7 +47,7 @@ class ResenasController extends Controller
         $resena->likes = $arr['likes'];
         $resena->usuario_id = $arr['usuario_id'];
         $resena->save();
-        
+
         return redirect()->route('resenas.index');
     }
 
@@ -90,7 +91,7 @@ class ResenasController extends Controller
         $resena->likes = $arr['likes'];
         $resena->usuario_id = $arr['usuario_id'];
         $resena->save();
-        
+
         return redirect()->route('resenas.index');
     }
 

@@ -19,3 +19,4 @@ Route::get('/', function () {
 
 Route::resource('comentarios', 'ComentariosController');
 Route::resource('resenas', 'ResenasController');
+Route::resource('usuarios', 'UsuariosController');

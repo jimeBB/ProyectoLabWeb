@@ -9,7 +9,7 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 80%;
-  
+
 }
 
 td, th {
@@ -43,6 +43,7 @@ tr:nth-child(even) {
 <p>
     <a href="{{ route('resenas.create') }}" class="escribir">Escribir Reseña</a>
     <a href="{{ route('comentarios.index') }}" class="escribir">Ver Comentarios</a>
+    <a href="{{ route('usuarios.index') }}" class="escribir">Ver Usuarios</a>
 </p>
 <p></p>
 

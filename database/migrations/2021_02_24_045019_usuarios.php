@@ -19,7 +19,7 @@ class Usuarios extends Migration
             $table->string('apellido');
             $table->string('correo');
             $table->string('contrasena');
-            $table->date('cumpleaños');
+            $table->date('cumpleanos');
             $table->timestamps();
         });
     }
