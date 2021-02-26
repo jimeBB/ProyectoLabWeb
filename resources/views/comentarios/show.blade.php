@@ -16,6 +16,7 @@
         <tr>
         <p></p>
         @foreach($comentario->resena as $resena)
+       
           <td>{{ $resena->titulo }}</td>
           <td>{{ $comentario->nombre }}</td>
             <td>{{ $comentario->fecha }}</td>

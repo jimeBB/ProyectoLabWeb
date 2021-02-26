@@ -55,12 +55,15 @@ tr:nth-child(even) {
     </thead>
     <tbody>
         <tr>
+       
+       
             <td>{{ $resena->id }}</td>
             <td>{{ $resena->nombre }}</td>
             <td>{{ $resena->fecha_creacion }}</td>
             <td>{{ $resena->categoria }}</td>
             <td>{{ $resena->likes}}</td>
-            <td>{{ $resena->usuario_id}}</td>
+            <td>{{ $resena->usuario->nombre}}</td>
+           
         </tr>
     </tbody>
 </table>

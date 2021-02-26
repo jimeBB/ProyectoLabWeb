@@ -23,7 +23,7 @@ class Resenas extends Migration
             $table->string('likes');
             $table->timestamps();
             $table->integer('usuario_id')->unsigned();
-            $table->foreign('usuario_id')->references('id')->on('usuario')->onDelete('cascade');
+            $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade');
             
     
 
