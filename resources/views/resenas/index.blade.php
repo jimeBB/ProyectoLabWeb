@@ -42,7 +42,9 @@ tr:nth-child(even) {
 <h1>Lista de Reseñas</h1>
 <p>
     <a href="{{ route('resenas.create') }}" class="escribir">Escribir Reseña</a>
+    <a href="{{ route('comentarios.index') }}" class="escribir">Ver Comentarios</a>
 </p>
+<p></p>
 
 <table>
     <thead>

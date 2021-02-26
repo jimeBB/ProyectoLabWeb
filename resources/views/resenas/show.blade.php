@@ -69,5 +69,5 @@ tr:nth-child(even) {
 </table>
 <h1>{{ $resena->titulo }}</h1>
 <p>{{ $resena->texto }} </p>
-<a href="{{ route('comentarios.index') }}">Ver Comentarios</a>
+
 @endsection

@@ -1,9 +1,47 @@
 @extends('layouts.main')
 
 @section('content')
+<style>
+h1 {
+    font-family: arial, sans-serif;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.escribir:link, .escribir:visited {
+  border: solid 1px;
+  font-family: arial, sans-serif;
+  background-color: black;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.escribir:hover, .escribir:active {
+  background-color: white;
+  color: black;
+  border: solid 1px;
+}
+</style>
 <h1>Lista de comentarios</h1>
 <p>
-    <a href="{{ route('comentarios.create') }}">Crea un comentario</a>
+    <a href="{{ route('comentarios.create') }}"class="escribir">Crea un comentario</a>
 </p>
 <table>
     <thead>
