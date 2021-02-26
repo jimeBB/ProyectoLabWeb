@@ -14,11 +14,15 @@
     </thead>
     <tbody>
         <tr>
-            <td>{{ $comentario->id }}</td>
-            <td>{{ $comentario->nombre }}</td>
+        <p></p>
+        @foreach($comentario->resena as $resena)
+          <td>{{ $resena->titulo }}</td>
+          <td>{{ $comentario->nombre }}</td>
             <td>{{ $comentario->fecha }}</td>
             <td>{{ $comentario->texto }}</td>
             <td>{{ $comentario->likes}}</td>
+    @endforeach
+           
         </tr>
     </tbody>
 </table>

@@ -8,7 +8,7 @@
 <table>
     <thead>
         <tr>
-            <th>Reseña</th>
+            <th>ID</th>
             <th>Nombre</th>
             <th>Fecha</th>
             <th></th>

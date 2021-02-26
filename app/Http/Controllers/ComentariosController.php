@@ -44,7 +44,7 @@ class ComentariosController extends Controller
         $comentario->likes = $arr['likes'];
         $comentario->save();
         $resenaid = $arr['resenaid'];
-        $resena = Resena::find([$resenaid ]);
+        $resena = Resena::find([$resenaid]);
         $comentario->resena()->attach($resena);
         return redirect()->route('comentarios.index');
     }
@@ -55,7 +55,7 @@ class ComentariosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Comentario $comentario)
+    public function show(Comentario $comentario, Resena $resena)
     {
         return view('comentarios.show', ['comentario' => $comentario]);
     }
@@ -78,7 +78,7 @@ class ComentariosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comentario $comentario)
+    public function update(Request $request)
     {
         $arr = $request->input();
         $comentario->nombre = $arr['nombre'];
