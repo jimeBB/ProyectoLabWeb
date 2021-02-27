@@ -78,7 +78,7 @@ class ComentariosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, Comentario $comentario)
     {
         $arr = $request->input();
         $comentario->nombre = $arr['nombre'];
