@@ -22,7 +22,7 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.escribir:link, .escribir:visited {
+.botones:link, .botones:visited {
   border: solid 1px;
   font-family: arial, sans-serif;
   background-color: black;
@@ -33,7 +33,7 @@ tr:nth-child(even) {
   display: inline-block;
 }
 
-.escribir:hover, .escribir:active {
+.botones:hover, .botones:active {
   background-color: white;
   color: black;
   border: solid 1px;
@@ -41,9 +41,9 @@ tr:nth-child(even) {
 </style>
 <h1>Lista de Reseñas</h1>
 <p>
-    <a href="{{ route('resenas.create') }}" class="escribir">Escribir Reseña</a>
-    <a href="{{ route('comentarios.index') }}" class="escribir">Ver Comentarios</a>
-    <a href="{{ route('usuarios.index') }}" class="escribir">Ver Usuarios</a>
+    <a href="{{ route('resenas.create') }}" class="botones">Escribir Reseña</a>
+    <a href="{{ route('comentarios.index') }}" class="botones">Ver Comentarios</a>
+    <a href="{{ route('usuarios.index') }}" class="botones">Ver Usuarios</a>
 </p>
 <p></p>
 
@@ -69,17 +69,28 @@ tr:nth-child(even) {
                 <td>{{ $item->categoria }}</td>
                 <td>{{ $item->usuario_id }}</td>
                 <td>
-                    <a href="{{ route('resenas.show', ['resena' => $item]) }}">
-                        Leer
-                    </a> |
-                    <a href="{{ route('resenas.edit', ['resena' => $item]) }}">
-                        Editar
-                    </a>
-                    <form action="{{ route('resenas.destroy', ['resena' => $item]) }}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <input type="submit" value="Eliminar">
-                    </form>
+                    <table>
+                        <td>
+                            <a href="{{ route('resenas.show', ['resena' => $item]) }}">
+                                Leer
+                            </a> 
+                        </td>
+                        <td>
+                            <a href="{{ route('resenas.edit', ['resena' => $item]) }}">
+                                Editar
+                            </a>
+                        </td>
+                        <td>
+                            <form action="{{ route('resenas.destroy', ['resena' => $item]) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" value="Eliminar">
+                            </form>
+                        </td>
+                    </table>
+                    
+                    
+                    
                 </td>
             </tr>
         @endforeach

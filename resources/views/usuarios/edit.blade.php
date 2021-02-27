@@ -2,7 +2,15 @@
 @extends('layouts.main')
 
 @section('content')
-
+<style>
+h1, label {
+    font-family: arial, sans-serif;
+}
+input[type=text] {
+  border: none;
+  border-bottom: 1px solid black;
+}
+</style>
 <form action="{{ route('usuarios.update', ['usuario' => $usuario])}}" method="POST">
     @csrf
     @method('PUT')

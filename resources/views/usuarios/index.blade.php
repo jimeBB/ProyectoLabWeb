@@ -22,7 +22,7 @@
     background-color: #dddddd;
     }
 
-    .escribir:link, .escribir:visited {
+    .botones:link, .botones:visited {
     border: solid 1px;
     font-family: arial, sans-serif;
     background-color: black;
@@ -33,7 +33,7 @@
     display: inline-block;
     }
 
-    .escribir:hover, .escribir:active {
+    .botones:hover, .botones:active {
     background-color: white;
     color: black;
     border: solid 1px;
@@ -41,9 +41,9 @@
 </style>
 <h1>Usuarios</h1>
 <p>
-    <a href="{{ route('usuarios.create') }}" class="escribir">Crear Usuario</a>
-    <a href="{{ route('comentarios.index') }}" class="escribir">Ver Comentarios</a>
-    <a href="{{ route('resenas.index') }}" class="escribir">Ver Reseñas</a>
+    <a href="{{ route('usuarios.create') }}" class="botones">Crear Usuario</a>
+    <a href="{{ route('comentarios.index') }}" class="botones">Ver Comentarios</a>
+    <a href="{{ route('resenas.index') }}" class="botones">Ver Reseñas</a>
 </p>
 <p></p>
 

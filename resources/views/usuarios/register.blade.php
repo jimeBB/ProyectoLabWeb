@@ -2,6 +2,15 @@
 @extends('layouts.main')
 
 @section('content')
+<style>
+h1, label {
+    font-family: arial, sans-serif;
+}
+input[type=text] {
+  border: none;
+  border-bottom: 1px solid black;
+}
+</style>
 <h1>Registra un usuario</h1>
 <form action="{{ route('usuarios.store') }}" method="POST">
     @csrf

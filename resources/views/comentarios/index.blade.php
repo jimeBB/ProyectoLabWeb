@@ -22,7 +22,7 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.escribir:link, .escribir:visited {
+.botones:link, .botones:visited {
   border: solid 1px;
   font-family: arial, sans-serif;
   background-color: black;
@@ -33,7 +33,7 @@ tr:nth-child(even) {
   display: inline-block;
 }
 
-.escribir:hover, .escribir:active {
+.botones:hover, .botones:active {
   background-color: white;
   color: black;
   border: solid 1px;
@@ -41,9 +41,9 @@ tr:nth-child(even) {
 </style>
 <h1>Lista de comentarios</h1>
 <p>
-    <a href="{{ route('comentarios.create') }}"class="escribir">Crea un comentario</a>
-    <a href="{{ route('usuarios.index') }}" class="escribir">Ver Usuarios</a>
-    <a href="{{ route('resenas.index') }}" class="escribir">Ver Reseñas</a>
+    <a href="{{ route('comentarios.create') }}"class="botones">Crea un comentario</a>
+    <a href="{{ route('usuarios.index') }}" class="botones">Ver Usuarios</a>
+    <a href="{{ route('resenas.index') }}" class="botones">Ver Reseñas</a>
 </p>
 <table>
     <thead>
@@ -62,15 +62,15 @@ tr:nth-child(even) {
                 <td>{{ $item->fecha }}</td>
                 <td>
                     <a href="{{ route('comentarios.show', ['comentario' => $item]) }}">
-                        Show
+                        Mostrar
                     </a> |
                     <a href="{{ route('comentarios.edit', ['comentario' => $item]) }}">
-                        Update
+                        Editar
                     </a>
                     <form action="{{ route('comentarios.destroy', ['comentario' => $item]) }}" method="post">
                         @csrf
                         @method('DELETE')
-                        <input type="submit" value="Delete">
+                        <input type="submit" value="Eliminar">
                     </form>
                 </td>
             </tr>
