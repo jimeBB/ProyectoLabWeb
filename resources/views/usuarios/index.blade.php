@@ -41,6 +41,13 @@
 </style>
 <h1>Usuarios</h1>
 <p>
+    @auth
+        {{ auth()->user()->email }}
+       
+        <a href="{{ route('auth.logout') }}">Logout</a>
+    
+</p>
+<p>
     <a href="{{ route('usuarios.create') }}" class="botones">Crear Usuario</a>
     <a href="{{ route('comentarios.index') }}" class="botones">Ver Comentarios</a>
     <a href="{{ route('resenas.index') }}" class="botones">Ver Reseñas</a>
@@ -87,3 +94,4 @@
 </table>
 
 @endsection
+@endauth
