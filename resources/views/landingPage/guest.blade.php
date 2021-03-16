@@ -1,11 +1,7 @@
 @extends('layouts.main')
 
-<head>
-  
-    <link rel="stylesheet" href="">
-</head>
 @section('content')
-<body>
+
 
     <!-- Navbar inicio-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -54,8 +50,8 @@
             </div>
             <div class="col-md-8">
 
-            <div class="row">
-        <!-- Parte central -->
+                <div class="row">
+                     <!-- Parte central -->
                     <div class="col-md-12">
                         <!-- Navbar de filtrado -->
                         <nav class="nav nav-tools">
@@ -94,7 +90,7 @@
                                     <div class="col-md-5">
                                         <figure class="card-image-review">
                                             <a href="">
-                                                <img src="imgs/resplandor.jpg" class="card-image" alt="""> </a>
+                                                <img src="../../imgs/resplandor.jpg" class="card-image" alt="""> </a>
                                         </figure>
                                         </div>
                                 <div class=" col-md-7">
@@ -197,5 +193,6 @@
     </div>
     <!-- Body Final-->
 
-</body>
 @endsection
+
+
