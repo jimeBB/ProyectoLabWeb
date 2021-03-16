@@ -4,6 +4,7 @@
   
     <link rel="stylesheet" href="">
 </head>
+@section('content')
 <body>
 
     <!-- Navbar inicio-->
@@ -197,3 +198,4 @@
     <!-- Body Final-->
 
 </body>
+@endsection
