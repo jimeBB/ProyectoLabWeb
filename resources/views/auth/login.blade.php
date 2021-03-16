@@ -1,7 +1,23 @@
-@extends('layouts.main')
+@extends('layouts.regis')
 
 @section('content')
-    <h1>Inicio sesión</h1>
+    <div class="card-body">
+        <h5 class="card-title text-center">Ingresar</h5>
+        <hr class="my-4">
+        <form action="{{ route('auth.do-login') }}" method="POST">
+            @csrf
+            <div class="form-label-group mt-3">
+                <input type="email" name="email" class="form-control" placeholder="Email address" required>
+            </div>
+
+            <div class="form-label-group mt-3">
+                <input type="password" name="password" class="form-control" placeholder="Password" required>
+            </div>
+            <hr class="my-4">
+            <input class="btn btn-lg btn-primary btn-block text-uppercase mt-4" type="submit" value="Ingresar">
+        </form>
+    </div>
+
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -11,15 +27,4 @@
             </ul>
         </div>
     @endif
-
-    <form action="{{ route('auth.do-login') }}" method="POST">
-        @csrf
-        <label for="">Email</label>
-        <input type="text" name="email" id="">
-        <br>
-        <label for="">Password</label>
-        <input type="password" name="password" id="">
-        <br>
-        <input type="submit" value="Inicio de sesión">
-    </form>
 @endsection

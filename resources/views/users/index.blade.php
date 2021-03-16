@@ -39,16 +39,10 @@
     border: solid 1px;
     }
 </style>
-<h1>Usuarios</h1>
+
+<h1>Users</h1>
 <p>
-    @auth
-        {{ auth()->user()->email }}
-       
-        <a href="{{ route('auth.logout') }}">Logout</a>
-    
-</p>
-<p>
-    <a href="{{ route('usuarios.create') }}" class="botones">Crear Usuario</a>
+    <a href="{{ route('users.create') }}" class="botones">Crear user</a>
     <a href="{{ route('comentarios.index') }}" class="botones">Ver Comentarios</a>
     <a href="{{ route('resenas.index') }}" class="botones">Ver Reseñas</a>
 </p>
@@ -63,24 +57,24 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($usuario as $item)
+        @foreach ($user as $item)
             <tr>
                 <td>{{ $item->id }}</td>
-                <td>{{ $item->correo }}</td>
+                <td>{{ $item->email }}</td>
                 <td>
                     <table>
                         <td>
-                            <a href="{{ route('usuarios.show', ['usuario' => $item]) }}">
+                            <a href="{{ route('users.show', ['user' => $item]) }}">
                                 Ver más
                             </a>
                         </td>
                         <td>
-                            <a href="{{ route('usuarios.edit', ['usuario' => $item]) }}">
+                            <a href="{{ route('users.edit', ['user' => $item]) }}">
                                 Editar
                             </a>
                         </td>
                         <td>
-                            <form action="{{ route('usuarios.destroy', ['usuario' => $item]) }}" method="post">
+                            <form action="{{ route('users.destroy', ['user' => $item]) }}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <input type="submit" value="Eliminar">
@@ -94,4 +88,3 @@
 </table>
 
 @endsection
-@endauth

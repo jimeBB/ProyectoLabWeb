@@ -51,15 +51,15 @@ tr:nth-child(even) {
     </thead>
     <tbody>
         <tr>
-            <td>{{ $usuario->id }}</td>
-            <td>{{ $usuario->correo }}</td>
-            <td>{{ $usuario->nombre }}</td>
-            <td>{{ $usuario->apellido }}</td>
-            <td>{{ $usuario->cumpleanos }}</td>
+            <td>{{ $user->id }}</td>
+            <td>{{ $user->email }}</td>
+            <td>{{ $user->name }}</td>
+            <td>{{ $user->lname }}</td>
+            <td>{{ $user->birthday }}</td>
         </tr>
     </tbody>
 </table>
 
-<a href="{{ route('usuarios.index') }}" class="regresar">Regresar</a>
+<a href="{{ route('users.index') }}" class="regresar">Regresar</a>
 
 @endsection

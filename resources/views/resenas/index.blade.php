@@ -43,7 +43,7 @@ tr:nth-child(even) {
 <p>
     <a href="{{ route('resenas.create') }}" class="botones">Escribir Reseña</a>
     <a href="{{ route('comentarios.index') }}" class="botones">Ver Comentarios</a>
-    <a href="{{ route('usuarios.index') }}" class="botones">Ver Usuarios</a>
+    <a href="{{ route('users.index') }}" class="botones">Ver Usuarios</a>
 </p>
 <p></p>
 
@@ -73,7 +73,7 @@ tr:nth-child(even) {
                         <td>
                             <a href="{{ route('resenas.show', ['resena' => $item]) }}">
                                 Leer
-                            </a> 
+                            </a>
                         </td>
                         <td>
                             <a href="{{ route('resenas.edit', ['resena' => $item]) }}">
@@ -88,9 +88,9 @@ tr:nth-child(even) {
                             </form>
                         </td>
                     </table>
-                    
-                    
-                    
+
+
+
                 </td>
             </tr>
         @endforeach

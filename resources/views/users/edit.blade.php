@@ -11,35 +11,36 @@ input[type=text] {
   border-bottom: 1px solid black;
 }
 </style>
-<h1>Registra un usuario</h1>
-<form action="{{ route('usuarios.store') }}" method="POST">
+<form action="{{ route('users.update', ['user' => $user])}}" method="POST">
     @csrf
+    @method('PUT')
+    <h1>Editando a {{$user->name}} </h1>
     <div>
         <label for="">Correo Electrónico</label>
-        <input type="text" name="correo">
+        <input type="text" name="correo" value="{{$user->name}}">
     </div><br>
     <div>
         <label for="">Nombre</label>
-        <input type="text" name="nombre">
+        <input type="text" name="name" value="{{$user->name}}">
     </div><br>
     <div>
         <label for="">Apellido</label>
-        <input type="text" name="apellido">
+        <input type="text" name="lname" value="{{$user->lname}}">
     </div><br>
     <div>
         <label for="">Fecha de Nacimiento</label>
-        <input type="date" name="fecha_nacimiento">
+        <input type="date" name="birthday" value="{{$user->birthday}}">
     </div><br>
     <div>
         <label for="">Contraseña</label>
-        <input type="password" name="contrasena">
+        <input type="password" name="password">
     </div><br>
     <div>
         <label for="">Confirmación</label>
-        <input type="password" name="confirmacion">
+        <input type="password" name="password_confirmation">
     </div><br>
     <div>
-        <input type="submit" value="Registrarse">
+        <input type="submit" value="Actualizar">
     </div><br>
 </form>
 @endsection

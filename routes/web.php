@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('comentarios', 'ComentariosController');
-Route::resource('resenas', 'ResenasController');
-Route::resource('usuarios', 'UsuariosController');
+Route::resource('comentarios', 'ComentariosController')->middleware(['guest']);
+Route::resource('resenas', 'ResenasController')->middleware(['guest']);
+Route::resource('users', 'UsersController')->middleware(['guest', 'normaluser']);
 
 Route::get('register', 'AuthController@register')->name('auth.register');
 Route::post('register', 'AuthController@doRegister')->name('auth.do-register');
