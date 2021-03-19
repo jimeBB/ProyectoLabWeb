@@ -28,7 +28,12 @@ class ResenasController extends Controller
     {
         return view('resenas.crear');
     }
-
+      /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -63,6 +68,13 @@ class ResenasController extends Controller
         return view('resenas.show', ['resena' => $resena]);
     }
 
+  
+    public function showUser( Resena $resena)
+    {
+        
+        return view('resenas.userShow', ['resena' => $resena]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -71,7 +83,7 @@ class ResenasController extends Controller
      */
     public function edit(Resena $resena)
     {
-        return view('resenas.edit', ['resena' => $resena]);
+        return view('resenas.edit');
     }
 
     /**

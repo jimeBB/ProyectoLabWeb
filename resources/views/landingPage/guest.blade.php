@@ -189,7 +189,8 @@
                                                         <div class="review-footer ">
 
                                                             <ul class="review-share">
-                                                                <li class="readMore"><a href="" class="more-button ">
+                                                                
+                                                                <li class="readMore"><a href="{{ route('resena.show-user', ['resena' => $item]) }}" class="more-button ">
                                                                         Leer más</a></li>
                                                                 <li><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                         height="16" fill="currentColor"

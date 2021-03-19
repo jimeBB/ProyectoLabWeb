@@ -29,3 +29,5 @@ Route::post('register', 'AuthController@doRegister')->name('auth.do-register');
 Route::get('login', 'AuthController@login')->name('auth.login');
 Route::post('login', 'AuthController@doLogin')->name('auth.do-login');
 Route::any('logout', 'AuthController@logout')->name('auth.logout');
+Route::get('showUser/{resena}', 'ResenasController@showUser')->name('resena.show-user');
+
