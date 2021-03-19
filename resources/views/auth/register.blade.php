@@ -3,17 +3,18 @@
 
 
 @section('content')
-
-    @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
     <div class="card-body">
+
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
         <h5 class="card-title text-center">Registro de usuario</h5>
         <hr class="my-4">
         <form action="{{ route('auth.do-register') }}" method="POST">
