@@ -95,10 +95,9 @@
     <div id="button-container">
         <div class="buttons">
             <a class="nav-link" href="#">
-                <input type="submit" value="Publicar" class="btn btn-primary btn-log-in">
-                </input>
+                <input type="submit" value="Publicar" class="btn-publicar"></input>
             </a>
-        </div>
+        </div><br>
     </div>
 </form>
 @endsection

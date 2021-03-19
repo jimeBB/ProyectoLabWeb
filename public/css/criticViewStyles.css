@@ -1,52 +1,5 @@
 /*
 _________________________
-|						|
-|		  navbar   		|
-|						|
--------------------------
-*/
-.bg-light{
-    background-color: #fafafa!important;
-}
-.nav-item-profile{
-    align-self: center;
-}
-.btn-log-in{
-    height: 27px;
-    width: 80px;
-    font-size: 12px;
-    line-height: 0px;
-    border-radius: 15px;
-    background-color: #ff5e3a;
-    border-color: #ff5e3a;
-}
-.btn-log-in:hover{
-    background-color: #e3e3e3;
-    color: black;
-    border-color:#ff5e3a ;
-}
-.bi{
-    color: black;
-}
-
-.search-bar{
-    margin-left: 280px;
-}
-.search-input{
-    width: 370px;
-    height: 35px;
-}
-.btn-search-nav{
-    height: 35px ;
-    position: relative;
-    right: 50px;
-    bottom: 5px;
-}
-
-
-
-/*
-_________________________
 |                       |
 |         body          |
 |                       |
