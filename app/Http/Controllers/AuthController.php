@@ -41,7 +41,7 @@ class AuthController extends Controller
     {
         $credentials = $req->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->route('users.index');
+            return redirect()->route('landingpage.index');
         }
         return redirect()->back();
     }

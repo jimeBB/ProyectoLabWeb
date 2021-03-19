@@ -27,11 +27,13 @@
             </ul>
 
             <ul class="navbar-nav log-in-div">
-                <li class="nav-item"><a class="nav-link" href="#"><button type="button"
-                            class="btn btn-primary btn-crear-resena">Crear reseña</button></a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('/logout') }}""><button class="btn btn-primary btn-crear-resena" }"> logout </button></li></a>
+                <li class="nav-item"><a class="nav-link" href="#">
+                    <button type="button" class="btn btn-primary btn-crear-resena">Crear reseña</button></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"></a></li>
                             <li class="nav-item">
-                                <span class="mini-profilepic" role="link" tabindex="0" style="width: 40px; height: 40px;"><img alt="Foto del perfil" class="image-profile" data-testid="user-avatar" draggable="false" src="imgs/profilepic.jpeg"></span>
+                                <span class="mini-profilepic" role="link" tabindex="0" style="width: 40px; height: 40px;">
+                                    <img alt="Foto del perfil" class="image-profile" data-testid="user-avatar" draggable="false" src="imgs/profilepic.jpeg"></span>
                               </ul>
 
             </ul>
@@ -39,8 +41,9 @@
     </div>
 </nav>
 
-<!-- Navbar Final-->
-    <!-- Navbar inicio-->
+<!-- Navbar loggeado Final-->
+
+    <!-- Navbar no loggeado inicio-->
     @else
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
