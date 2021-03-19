@@ -1,0 +1,196 @@
+/*
+_________________________
+|                       |
+|         body          |
+|                       |
+-------------------------
+*/
+
+html, body {
+    height: 100%;
+    background-color: #e3e3e3;
+    
+}
+
+#body-container{
+    overflow: auto;
+    position: relative; 
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: #fafafa;
+    border-width: 0.5px;    
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+    box-shadow: 0 3px 1px 0 #c7c7c7, 5px 15px 30px -5px rgb(156 160 185 / 56%);
+}
+#review-container{
+    margin-top: 50px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+}
+#comments-section{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+
+}
+
+/*--------------------------------------*/
+#review-container .info{
+    border-radius: 5px;
+    position: relative;
+    margin-right: 1px solid;
+}
+#review-container .tags{
+    border-radius: 5px;
+    margin-top: -10px;
+}
+#review-container .review-holder{
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+/*--------------------------------------*/
+#review-container .info h1{
+    font-size: 30px;
+    margin-right: 10px;
+}
+#review-container .info h2{
+    font-size: 18px;
+    margin-right: 2px;
+}
+#review-container .info h3{
+    font-size: 18px;
+}
+
+/*--------------------------------------*/
+#review-container .tags h1{
+    font-size: 20px;
+    margin-right: 5px;
+}
+#review-container .tags h2{
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+#review-container .reactions{
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 0.5px;
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px;
+}
+#review-container .reactions h1{
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+/*--------------------------------------*/
+#comments-section .user-comment{
+    background-color: #EEEEEE;
+    border-radius: 5px;
+    position: relative;
+    height: 50px;
+}
+#comments-section .user-comment-np{
+    background-color: #EEEEEE;
+    border-radius: 5px;
+    position: relative;
+}
+
+#comments-section .user-comment h1{
+    font-size: 30px;
+    line-height: 50px;
+    float: left;
+    margin-left: 20px;
+}
+#comments-section .user-comment-np h1{
+    font-size: 30px;
+    line-height: 50px;
+    margin-left: 20px;
+}
+#comments-section .user-comment-np textarea{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 100px;
+    margin-top: -10px;
+
+}
+
+.user-comment .buttons{
+    float: right;
+    line-height: 50px;
+}
+.user-comment-np .buttons{
+    position: relative;
+    margin-top: -5px;
+}
+.user-comment-np .buttons button{
+    position: relative;
+    border-radius: 0px;
+    left: 86%;
+    margin-bottom: 10px;
+}
+
+/*--------------------------------------*/
+#comments-section .generic-comment{
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.generic-comment .comment-info{
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    height: 50px;
+    position: relative;
+}
+.generic-comment .comment-info img{
+    width: 30px;
+    left: 8px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.generic-comment .comment-info h1{
+    font-size: 25px;
+    margin-right: 5px;
+    line-height: 40px;
+}
+.generic-comment .comment-info div{
+    font-size: 25px;
+    margin-right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    left: 50px;
+}
+
+#comments-section .generic-comment{
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.generic-comment .comment-text{
+    border-style: solid;
+    border-top: none;
+    border-width: 1px;
+    position: relative;
+}
+.generic-comment .comment-text p{
+    top: 50%;
+    width: 95%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+

@@ -88,9 +88,6 @@ tr:nth-child(even) {
                             </form>
                         </td>
                     </table>
-
-
-
                 </td>
             </tr>
         @endforeach
