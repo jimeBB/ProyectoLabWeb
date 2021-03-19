@@ -1,0 +1,158 @@
+/*
+_________________________
+|						|
+|		  navbar   		|
+|						|
+-------------------------
+*/
+.bg-light{
+    background-color: #fafafa!important;
+}
+.nav-item-profile{
+    align-self: center;
+}
+.btn-log-in{
+    height: 27px;
+    width: 80px;
+    font-size: 12px;
+    line-height: 0px;
+    border-radius: 15px;
+    background-color: #ff5e3a;
+    border-color: #ff5e3a;
+}
+.btn-log-in:hover{
+    background-color: #e3e3e3;
+    color: black;
+    border-color:#ff5e3a ;
+}
+.bi{
+    color: black;
+}
+
+.search-bar{
+    margin-left: 280px;
+}
+.search-input{
+    width: 370px;
+    height: 35px;
+}
+.btn-search-nav{
+    height: 35px ;
+    position: relative;
+    right: 50px;
+    bottom: 5px;
+}
+
+/*
+_________________________
+|                       |
+|         body          |
+|                       |
+-------------------------
+*/
+
+html, body {
+    height: 100%;
+    background-color: #e3e3e3;
+    
+}
+
+#body-container{
+    overflow: auto;
+    position: relative; 
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: #fafafa;
+    border-width: 0.5px;    
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+    box-shadow: 0 3px 1px 0 #c7c7c7, 5px 15px 30px -5px rgb(156 160 185 / 56%);
+}
+#button-container{
+    position: relative; 
+    margin-top: 20px;
+    border-radius: 20px;
+    border-width: 0.5px;    
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+}
+#review-container{
+    margin-top: 30px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+}
+/*--------------------------------------*/
+#review-container .info{
+    border-radius: 5px;
+    position: relative;
+    margin-right: 1px solid;
+}
+#review-container .info h1{
+    font-size: 30px;
+}
+#review-container .tags{
+    border-radius: 5px;
+    margin-top: -10px;
+}
+#review-container .review-holder{
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+/*--------------------------------------*/
+#review-container .info input{
+    font-size: 30px;
+    margin-right: 10px;
+}
+#review-container .info h2{
+    font-size: 18px;
+    margin-right: 2px;
+}
+#review-container .info h3{
+    font-size: 18px;
+}
+
+/*--------------------------------------*/
+#review-container .tags h1{
+    font-size: 20px;
+    margin-right: 5px;
+}
+#review-container .tags h2{
+    font-size: 18px;
+    margin-right: 10px;
+}
+/*--------------------------------------*/
+#review-container .review-holder h1{
+    font-size: 20px;
+    margin-right: 5px;
+}
+#review-container .review-holder textarea{
+    font-size: 15px;
+    margin-right: 5px;
+    width: 100%;
+    height: 500px;
+}
+/*--------------------------------------*/
+#review-container .image-uploader{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#review-container .image-uploader h1{
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+#button-container{
+    text-align: center;
+}
+#button-container input{
+    border-radius: 0px;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
