@@ -27,12 +27,14 @@ class AuthController extends Controller
             'email' => 'required|email:rfc,dns|unique:users',
             'birthday' => 'date',
             'password' => 'required|confirmed|min:6',
+            'role' => 'required',
         ])->validate();
 
         $data['password'] = Hash::make($data['password']);
 
         user::create($data);
-        return redirect()->back();
+
+        return redirect()->route('auth.login');
     }
 
     public function login(Request $req)
@@ -45,6 +47,11 @@ class AuthController extends Controller
         $credentials = $req->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+            $role = $user->role;
+
+            if ($role == 'admin')
+                return redirect()->route('users.index');
 
             return redirect()->route('landingpage.index');
         }

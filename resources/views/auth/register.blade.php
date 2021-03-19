@@ -29,6 +29,18 @@
             <div class="form-label-group mt-3">
                 <input type="email" name="email" class="form-control" placeholder="Correo Electrónico" required>
             </div>
+
+            <div class="form-label-group mt-3">
+                <select class="form-control" name="role">
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+            <div class="form-label-group mt-3">
+                <label>Ingrese su fecha de nacimiento</label>
+                <input type="date" name="birthday" class="form-control" required>
+            </div>
+
             <div class="form-label-group mt-3">
                 <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
             </div>
@@ -36,10 +48,7 @@
             <div class="form-label-group mt-3">
                 <input type="password" name="password_confirmation" class="form-control" placeholder="Confirma la contraseña" required>
             </div>
-            <div class="form-label-group mt-3">
-                <label>Ingrese su fecha de nacimiento</label>
-                <input type="date" name="birthday" class="form-control" required>
-            </div>
+
             <hr class="my-4">
             <input class="btn btn-lg btn-primary btn-block text-uppercase mt-4" type="submit" value="Registrarse">
         </form>

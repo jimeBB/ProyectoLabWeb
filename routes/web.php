@@ -15,8 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    
-    
+    return redirect()->route('landingpage.index');
 });
 
 Route::resource('landingpage', 'LandingController');
