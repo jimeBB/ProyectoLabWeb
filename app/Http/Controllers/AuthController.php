@@ -7,6 +7,9 @@ use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Redirect;
+use Illuminate\Support\MessageBag;
+use Illuminate\Support\Facades\Input;
 
 class AuthController extends Controller
 {
@@ -23,7 +26,7 @@ class AuthController extends Controller
             'lname' => 'required',
             'email' => 'required|email:rfc,dns|unique:users',
             'birthday' => 'date',
-            'password' => 'required|confirmed',
+            'password' => 'required|confirmed|min:6',
         ])->validate();
 
         $data['password'] = Hash::make($data['password']);
@@ -40,10 +43,14 @@ class AuthController extends Controller
     public function doLogin(Request $req)
     {
         $credentials = $req->only('email', 'password');
+
         if (Auth::attempt($credentials)) {
+
             return redirect()->route('landingpage.index');
         }
-        return redirect()->back();
+
+        $errors = new MessageBag(['password' => ['Email o contraseña incorrectos']]);
+        return redirect()->back()->withErrors($errors);
     }
 
     public function logout(Request $req)
@@ -51,6 +58,6 @@ class AuthController extends Controller
         Auth::logout();
         $req->session()->invalidate();
         $req->session()->regenerateToken();
-        return redirect()->route('users.index');
+        return redirect()->route('landingpage.index');
     }
 }
