@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Resena;
 use App\Models\Usuario;
 
-class ResenasController extends Controller
+class LandingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class ResenasController extends Controller
     public function index()
     {
         $resena = Resena::all();
-        return view('resenas.index', ['resena' => $resena]);
+        return view('landingPage.guest', ['resena' => $resena]);
     }
 
     /**
@@ -43,7 +43,6 @@ class ResenasController extends Controller
         $resena->titulo = $arr['titulo'];
         $resena->fecha_creacion = $arr['fecha_creacion'];
         $resena->categoria = $arr['categoria'];
-        $resena->url = $arr['url'];
         $resena->texto = $arr['texto'];
         $resena->likes = $arr['likes'];
         $resena->usuario_id = $arr['usuario_id'];
@@ -88,7 +87,6 @@ class ResenasController extends Controller
         $resena->titulo = $arr['titulo'];
         $resena->fecha_creacion = $arr['fecha_creacion'];
         $resena->categoria = $arr['categoria'];
-        $resena->url = $arr['url'];
         $resena->texto = $arr['texto'];
         $resena->likes = $arr['likes'];
         $resena->usuario_id = $arr['usuario_id'];

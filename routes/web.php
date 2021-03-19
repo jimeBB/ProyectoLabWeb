@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ResenasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('landingPage.guest');
+    
+    
 });
 
+Route::resource('landingpage', 'LandingController');
 Route::resource('comentarios', 'ComentariosController')->middleware(['guest']);
 Route::resource('resenas', 'ResenasController')->middleware(['guest']);
 Route::resource('users', 'UsersController')->middleware(['guest', 'normaluser']);

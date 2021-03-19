@@ -19,6 +19,7 @@ class Resenas extends Migration
             $table->string('titulo');
             $table->date('fecha_creacion');
             $table->string('categoria');
+            $table->string('url');
             $table->string('texto');
             $table->string('likes');
             $table->timestamps();

@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
 @section('content')
-
-
+     
+     
     <!-- Navbar inicio-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -83,6 +83,7 @@
                                 </ul>
                             </div>
                         </nav>
+                        @foreach ($resena as $item)
                         <!-- Card Reseña -->
                         <div class="card-container">
                             <article id="" class="card">
@@ -90,18 +91,18 @@
                                     <div class="col-md-5">
                                         <figure class="card-image-review">
                                             <a href="">
-                                                <img src="../../imgs/resplandor.jpg" class="card-image" alt="""> </a>
+                                                <!-- Checar como poner imagen -->
+                                                <img src=" {{ $item->url }}" class="card-image" alt="""> </a>
                                         </figure>
                                         </div>
                                 <div class=" col-md-7">
                                                 <div class="review-wrapper">
                                                     <div class="main-review-content">
                                                         <span class="tags">
-                                                            <a href="">Películas</a> <a href="">Terror</a>
+                                                            <a href="">{{ $item->categoria }}</a> 
                                                         </span>
                                                         <div class="review-header">
-                                                            <h2 class="review-title"><a>El resplandor: Una obra maestra
-                                                                    de terror</a></h2>
+                                                            <h2 class="review-title"><a>{{ $item->titulo }}</a></h2>
                                                         </div>
 
                                                         <div class="review-author-info">
@@ -117,16 +118,14 @@
                                                                             srcset="https://secure.gravatar.com/avatar/06dd70be9bfd5eae612c365ff59f94f0?s=64&amp;d=mm&amp;r=g 2x"
                                                                             class="avatar avatar-32 photo" height="32"
                                                                             width="32"> <span class="name-author">
-                                                                            <a>Carla Flores</a></span>
+                                                                            <a>{{ $item->nombre}}</a></span>
                                                                     </div>
                                                                 </span>
 
                                                                 <br>
                                                                 <div class="date-review">
 
-                                                                    <span class="posted-on"><a><time
-                                                                                class="review-date-published ">Marzo 16,
-                                                                                2021</time></a></span>
+                                                                    <span class="posted-on"><time class="review-date-published "> {{ $item->fecha_creacion}} </time></span>
                                                                     <span class="comments-review"><a>Comentarios</a><svg
                                                                             xmlns="http://www.w3.org/2000/svg"
                                                                             width="16" height="16" fill="currentColor"
@@ -142,15 +141,7 @@
                                                         </div>
                                                         <div class="review-content">
                                                             <p></p>
-                                                            <p>We finished our first sensor sweep of the neutral zone.
-                                                                You did exactly
-                                                                what you had to do. You considered all your options, you
-                                                                tried every
-                                                                alternative. Did you come here for something in
-                                                                particular or just
-                                                                general Riker-bashing? And blowing into maximum warp
-                                                                speed, you appeared
-                                                                for an instant to be in two places […]</p>
+                                                            <p>{{ $item->texto }} […]</p>
                                                             <p></p>
                                                         </div>
                                                         <div class="review-footer ">
@@ -164,7 +155,7 @@
                                                                         viewBox="0 0 16 16">
                                                                         <path
                                                                             d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.964.22.817.533 2.512.062 4.51a9.84 9.84 0 0 1 .443-.05c.713-.065 1.669-.072 2.516.21.518.173.994.68 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.162 3.162 0 0 1-.488.9c.054.153.076.313.076.465 0 .306-.089.626-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.826 4.826 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.616.849-.231 1.574-.786 2.132-1.41.56-.626.914-1.279 1.039-1.638.199-.575.356-1.54.428-2.59z" />
-                                                                    </svg><a class="likes-review"> 5</a></li>
+                                                                    </svg><a class="likes-review"> {{ $item->likes }}</a></li>
                                                                 <li><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                         height="16" fill="currentColor"
                                                                         class="bi bi-facebook share-icon" viewBox="0 0 16 16">
@@ -184,6 +175,7 @@
                                     </div>
                             </article>
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -191,6 +183,7 @@
             </div>
         </div>
     </div>
+
     <!-- Body Final-->
 
 @endsection

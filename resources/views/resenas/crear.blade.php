@@ -30,6 +30,10 @@ input[type=text] {
         <label for="">Categoría</label>
         <input type="text" name="categoria">
     </div><br>
+    <label for="">Imagen</label>
+    <div class="form-group">
+        <input type="file" name="url" required>
+    </div><br>
      <div>
         <label for="">Texto</label><br>
         <textarea type="text" name="texto" rows="10" cols="50"></textarea>
