@@ -28,7 +28,7 @@
 
             <ul class="navbar-nav log-in-div">
                 <li class="nav-item"><a class="nav-link" href="{{ url('/logout') }}""><button class="btn btn-primary btn-crear-resena" }"> logout </button></li></a>
-                <li class="nav-item"><a class="nav-link" href="#">
+                <li class="nav-item"><a class="nav-link" href="{{ route('resenas.create') }}">
                     <button type="button" class="btn btn-primary btn-crear-resena">Crear reseña</button></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"></a></li>
                             <li class="nav-item">
