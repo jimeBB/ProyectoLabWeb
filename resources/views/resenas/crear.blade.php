@@ -25,8 +25,8 @@
             </ul>
 
             <ul class="navbar-nav log-in-div">
-                <li class="nav-item"><a class="nav-link" href="{{ url('/logout') }}""><button class="btn btn-primary btn-crear-resena" }"> logout </button></li></a>
-                <li class="nav-item"><a class="nav-link" href="#">
+                <li class="nav-item"><a class="nav-link" href="{{ url('/logout') }}"><button class="btn btn-primary btn-crear-resena" }"> logout </button></li></a>
+                <li class="nav-item"><a class="nav-link" href="{{ route('resenas.create') }}">
                     <button type="button" class="btn btn-primary btn-crear-resena">Crear reseña</button></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"></a></li>
                             <li class="nav-item">
@@ -56,7 +56,7 @@
             </div><br>
             <div class="info-likes">
                 <div class="form-group" style="margin-bottom:10px;">
-                    <input type="text" name="likes" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Informacinó de Likes">
+                    <input type="text" name="likes" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Información de Likes">
                 </div>
             </div><br>
             <div class="info-id">
