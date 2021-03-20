@@ -42,7 +42,7 @@
 
 <h1>Users</h1>
 <p>
-    <a href="{{ route('users.create') }}" class="botones">Crear user</a>
+    
     <a href="{{ route('comentarios.index') }}" class="botones">Ver Comentarios</a>
     <a href="{{ route('resenas.index') }}" class="botones">Ver Reseñas</a>
 </p>
