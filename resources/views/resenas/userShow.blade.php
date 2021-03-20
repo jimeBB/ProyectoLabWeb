@@ -93,10 +93,10 @@
                 @csrf
             <div class="user-comment-np" style="display:inline;">
                 <h1>¡Escribe un comentario!</h1>
-                <textarea name ="texto"></textarea>
+                <textarea name ="texto" required></textarea>
                 <div>
                     <label for="">Resena id</label>
-                    <input type="text" name="resenaid">
+                    <input type="number" name="resenaid" required>
                 </div><br>
                 <div class="buttons">
                     <a class="nav-link" href="#" style="display:inline;">
