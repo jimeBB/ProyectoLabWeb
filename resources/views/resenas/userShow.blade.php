@@ -75,6 +75,7 @@
             
             <div class="user-comment" style="display:none;">
                 <h1>¡Escribe un comentario!</h1>
+            
                 <div class="buttons">
                     <a class="nav-link" href="#" style="display:inline;">
                     <button type="button" class="btn btn-primary btn-log-in">
@@ -88,18 +89,18 @@
                     </a>
                 </div>
             </div>
-
+            <form action="{{ route('comentarios.store',  ['resena' => $resena]) }}" method="POST">
+                @csrf
             <div class="user-comment-np" style="display:inline;">
                 <h1>¡Escribe un comentario!</h1>
-                <textarea></textarea>
+                <textarea name ="texto"></textarea>
                 <div class="buttons">
                     <a class="nav-link" href="#" style="display:inline;">
-                        <button type="button" class="btn btn-primary btn-log-in">
-                            Comentar
-                        </button>
+                        <input type="submit" value="Store">
                     </a>
                 </div>
             </div>
+        </form>
 
             <div class="generic-comment">
                 <div class="comment-info">

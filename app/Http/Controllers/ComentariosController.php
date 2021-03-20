@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comentario;
 use App\Models\Resena;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Carbon;
 
 class ComentariosController extends Controller
 {
@@ -34,16 +36,19 @@ class ComentariosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Resena $resena)
     {
+        $date = Carbon::now('America/Mexico_City');
+        $dateBlock = Carbon::parse('2030-10-05 23:00:00', 'America/Mexico_city');
+        $user = Auth::user();
         $arr = $request->input();
         $comentario = new Comentario();
-        $comentario->nombre = $arr['nombre'];
-        $comentario->fecha = $arr['fecha'];
+        $comentario->nombre = $user->name;
+        $comentario->fecha = $date;
         $comentario->texto = $arr['texto'];
-        $comentario->likes = $arr['likes'];
+        $comentario->likes = 4;
         $comentario->save();
-        $resenaid = $arr['resenaid'];
+        $resenaid = $resena->id;
         $resena = Resena::find([$resenaid]);
         $comentario->resena()->attach($resena);
         return redirect()->route('comentarios.index');

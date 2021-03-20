@@ -68,4 +68,4 @@ tr:nth-child(even) {
     </tbody>
 </table>
 @endsection
-@endauth
+
