@@ -45,32 +45,32 @@
             <div class="info">
                 <h1>Crear reseña</h1>
                 <div class="form-group">
-                    <input type="text" name="titulo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Título">
+                    <input type="text" name="titulo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Título" required>
                     <small id="emailHelp" class="form-text text-muted">Ponle un título cool.</small>
                 </div>
             </div><br>
             <div class="info-name">
                 <div class="form-group" style="margin-bottom:10px;">
-                    <input type="text" name="nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre de Usuario">
+                    <input type="text" name="nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre de Usuario" required>
                 </div>
             </div><br>
             <div class="info-likes">
                 <div class="form-group" style="margin-bottom:10px;">
-                    <input type="text" name="likes" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Información de Likes">
+                    <input type="number" name="likes" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Información de Likes" required>
                 </div>
             </div><br>
             <div class="info-id">
                 <div class="form-group" style="margin-bottom:10px;">
-                    <input type="text" name="usuario_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Id de usuario">
+                    <input type="number" name="usuario_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Id de usuario" required>
                 </div>
             </div><br>
             <div class="form-group" style="margin-bottom:30px;">
-                    <input class="form-control" type="date" name="fecha_creacion" value="2011-08-19" id="example-date-input">
+                    <input class="form-control" type="date" name="fecha_creacion" value="2011-08-19" id="example-date-input" required>
             </div>
 
             <div class="tags">
                 <h1 style="display:inline;">Categoría:</h1>
-                <select class="form-select" name="categoria" aria-label="Default select example">
+                <select class="form-select" name="categoria" aria-label="Default select example" required>
                   <option selected>Escoge una categoría</option>
                   <option value="1">Cine</option>
                   <option value="2">Videojuegos</option>
@@ -82,12 +82,12 @@
             <div class="review-holder">
                 <h1 style="display:inline;">Escribe tu reseña</h1>
                 <div class="text">
-                    <textarea name="texto" type="texto"></textarea>
+                    <textarea name="texto" type="texto" required></textarea>
                 </div>
             </div>
             <div class="image-uploader">
                 <h1 style="display:inline;">Sube una imagen para la portada</h1>
-                <input type="file" id="img" name="url" accept="image/*">
+                <input type="file" id="img" name="url" accept="image/*" required>
             </div>
         </div>
 
