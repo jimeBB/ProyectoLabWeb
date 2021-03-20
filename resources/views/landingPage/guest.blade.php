@@ -67,9 +67,9 @@
                 </ul>
 
                 <ul class="navbar-nav log-in-div">
-                    <li class="nav-item"><a class="nav-link" href="#"><button type="button"
+                    <li class="nav-item"><a class="nav-link" href= "{{ route('auth.login')}} " ><button type="button"
                                 class="btn btn-primary btn-log-in">Log in</button></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><button type="button"
+                    <li class="nav-item"><a class="nav-link" href = "{{ route('auth.register')}} "><button type="button"
                                 class="btn btn-primary btn-log-in">Sign in</button></li></a>
                     <li class="nav-item nav-item-profile"> <a class="nav-link" href="#"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"

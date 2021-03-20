@@ -48,7 +48,7 @@ class ComentariosController extends Controller
         $comentario->texto = $arr['texto'];
         $comentario->likes = 4;
         $comentario->save();
-        $resenaid = $resena->id;
+        $resenaid = $arr['resenaid'];
         $resena = Resena::find([$resenaid]);
         $comentario->resena()->attach($resena);
         return redirect()->route('comentarios.index');

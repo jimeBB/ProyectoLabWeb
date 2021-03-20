@@ -89,11 +89,15 @@
                     </a>
                 </div>
             </div>
-            <form action="{{ route('comentarios.store',  ['resena' => $resena]) }}" method="POST">
+            <form action="{{ route('comentarios.store' )}}" method="POST">
                 @csrf
             <div class="user-comment-np" style="display:inline;">
                 <h1>¡Escribe un comentario!</h1>
                 <textarea name ="texto"></textarea>
+                <div>
+                    <label for="">Resena id</label>
+                    <input type="text" name="resenaid">
+                </div><br>
                 <div class="buttons">
                     <a class="nav-link" href="#" style="display:inline;">
                         <input type="submit" value="Store">
