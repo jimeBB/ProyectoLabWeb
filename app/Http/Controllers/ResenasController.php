@@ -54,7 +54,7 @@ class ResenasController extends Controller
         $resena->usuario_id = $arr['usuario_id'];
         $resena->save();
 
-        return redirect()->route('resenas.index');
+        return redirect()->route('landingpage.index');
     }
 
     /**
