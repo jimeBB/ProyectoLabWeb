@@ -46,6 +46,7 @@ tr:nth-child(even) {
             <th>Correo Electrónico</th>
             <th>Nombre</th>
             <th>Apellido</th>
+            <th>Rol</th>
             <th>Fecha de Nacimiento</th>
         </tr>
     </thead>
@@ -55,6 +56,7 @@ tr:nth-child(even) {
             <td>{{ $user->email }}</td>
             <td>{{ $user->name }}</td>
             <td>{{ $user->lname }}</td>
+            <td>{{ $user->role }}</td>
             <td>{{ $user->birthday }}</td>
         </tr>
     </tbody>
