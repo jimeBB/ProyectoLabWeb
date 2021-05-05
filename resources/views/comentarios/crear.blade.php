@@ -31,10 +31,6 @@ input[type=text] {
         <input type="text" name="likes">
     </div><br>
     <div>
-        <label for="">Resena id</label>
-        <input type="text" name="resenaid">
-    </div><br>
-    <div>
         <input type="submit" value="Store">
     </div>
 </form>

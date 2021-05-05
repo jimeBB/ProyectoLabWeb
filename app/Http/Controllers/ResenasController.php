@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Resena;
 use App\Models\Usuario;
+use Illuminate\Support\Facades\Auth;
 
 class ResenasController extends Controller
 {
@@ -42,16 +43,19 @@ class ResenasController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
+
         $arr = $request->input();
         $resena = new Resena();
-        $resena->nombre = $arr['nombre'];
+        $resena->nombre = $user->name;
         $resena->titulo = $arr['titulo'];
         $resena->fecha_creacion = $arr['fecha_creacion'];
         $resena->categoria = $arr['categoria'];
         $resena->url = $arr['url'];
         $resena->texto = $arr['texto'];
-        $resena->likes = $arr['likes'];
-        $resena->usuario_id = $arr['usuario_id'];
+        $resena->likes = 4;
+        $resena->usuario_id = $user->id;
+
         $resena->save();
 
         return redirect()->route('landingpage.index');

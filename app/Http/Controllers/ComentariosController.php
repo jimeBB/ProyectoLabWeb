@@ -38,6 +38,7 @@ class ComentariosController extends Controller
      */
     public function store(Request $request, Resena $resena)
     {
+        
         $date = Carbon::now('America/Mexico_City');
         $dateBlock = Carbon::parse('2030-10-05 23:00:00', 'America/Mexico_city');
         $user = Auth::user();
@@ -48,9 +49,10 @@ class ComentariosController extends Controller
         $comentario->texto = $arr['texto'];
         $comentario->likes = 4;
         $comentario->save();
-        $resenaid = $arr['resenaid'];
-        $resena = Resena::find([$resenaid]);
-        $comentario->resena()->attach($resena);
+        $resenaid = $request->resena;
+        
+        $resenaF = Resena::find([$resenaid]);
+        $comentario->resena()->attach($resenaF);
         return redirect()->route('comentarios.index');
     }
 

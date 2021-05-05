@@ -49,21 +49,8 @@
                     <small id="emailHelp" class="form-text text-muted">Ponle un título cool.</small>
                 </div>
             </div><br>
-            <div class="info-name">
-                <div class="form-group" style="margin-bottom:10px;">
-                    <input type="text" name="nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre de Usuario" required>
-                </div>
-            </div><br>
-            <div class="info-likes">
-                <div class="form-group" style="margin-bottom:10px;">
-                    <input type="number" name="likes" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Información de Likes" required>
-                </div>
-            </div><br>
-            <div class="info-id">
-                <div class="form-group" style="margin-bottom:10px;">
-                    <input type="number" name="usuario_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Id de usuario" required>
-                </div>
-            </div><br>
+            
+           
             <div class="form-group" style="margin-bottom:30px;">
                     <input class="form-control" type="date" name="fecha_creacion" value="2011-08-19" id="example-date-input" required>
             </div>
