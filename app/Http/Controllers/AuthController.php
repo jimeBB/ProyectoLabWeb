@@ -27,10 +27,11 @@ class AuthController extends Controller
             'email' => 'required|email:rfc,dns|unique:users',
             'birthday' => 'date',
             'password' => 'required|confirmed|min:6',
-            'role' => 'required',
+            
         ])->validate();
 
         $data['password'] = Hash::make($data['password']);
+        $data['role'] = "user";
 
         user::create($data);
 

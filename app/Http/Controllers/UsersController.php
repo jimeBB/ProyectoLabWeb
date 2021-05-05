@@ -36,14 +36,15 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        /*$arr = $request->input();
+        $arr = $request->input();
         $user = new User();
-        $user->nombre = $arr['nombre'];
-        $user->apellido = $arr['apellido'];
-        $user->cumpleanos = $arr['fecha_nacimiento'];
-        $user->correo = $arr['correo'];
-        $user->contrasena = $arr['contrasena'];
-        $user->save();*/
+        $user->name = $arr['name'];
+        $user->lname = $arr['lname'];
+        $user->birthday = $arr['birthday'];
+        $user->email= $arr['email'];
+        $user->password = $arr['password'];
+        $user->role = $arr['role'];
+        $user->save();
         return redirect()->route('users.index');
     }
 

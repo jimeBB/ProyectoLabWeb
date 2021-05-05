@@ -43,8 +43,10 @@
 <h1>Users</h1>
 <p>
     <a class="nav-link" href="{{ url('/logout') }}""> Log out </a>
+
     <a href="{{ route('comentarios.index') }}" class="botones">Ver Comentarios</a>
     <a href="{{ route('resenas.index') }}" class="botones">Ver Reseñas</a>
+    <a href="{{ route('users.create') }}" class="botones">Agregar usuario</a>
 </p>
 <p></p>
 
