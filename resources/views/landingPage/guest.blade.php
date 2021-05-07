@@ -8,7 +8,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <!-- Brand/logo -->
-        <a class="navbar-brand" href=""><img src="../imgs/logo-prov.png" width="48" height="48" alt="logo"></a>
+        <a class="navbar-brand" href="route('landingpage.index')"><img src="../imgs/logo-prov.png" width="48" height="48" alt="logo"></a>
         <div class="search-bar">
         <form class="form-inline my-2 my-lg-0">
             <input class="search-input mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
@@ -27,7 +27,10 @@
             </ul>
 
             <ul class="navbar-nav log-in-div">
-                <li class="nav-item"><a class="nav-link" href="{{ url('/logout') }}""><button class="btn btn-primary btn-crear-resena" }"> logout </button></li></a>
+                @if (Auth::user()->role=="admin")
+                    <li class="nav-item"><a class="nav-link" href="{{ route('users.index') }}"><button class="btn btn-primary btn-crear-resena" }> Dashboard </button></li></a>
+                @endif 
+                <li class="nav-item"><a class="nav-link" href="{{ url('/logout') }}"><button class="btn btn-primary btn-crear-resena" }> logout </button></li></a>
                 <li class="nav-item"><a class="nav-link" href="{{ route('resenas.create') }}">
                     <button type="button" class="btn btn-primary btn-crear-resena">Crear reseña</button></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"></a></li>
@@ -35,7 +38,6 @@
                                 <span class="mini-profilepic" role="link" tabindex="0" style="width: 40px; height: 40px;">
                                     <img alt="Foto del perfil" class="image-profile" data-testid="user-avatar" draggable="false" src="imgs/profilepic.jpeg"></span>
                               </ul>
-
             </ul>
         </div>
     </div>

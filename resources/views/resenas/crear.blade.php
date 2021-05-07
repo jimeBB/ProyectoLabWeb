@@ -6,7 +6,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <!-- Brand/logo -->
-        <a class="navbar-brand" href=""><img src="../imgs/logo-prov.png" width="48" height="48" alt="logo"></a>
+        <a class="navbar-brand" href="{{ route('landingpage.index') }}"><img src="../imgs/logo-prov.png" width="48" height="48" alt="logo"></a>
         <div class="search-bar">
         <form class="form-inline my-2 my-lg-0">
             <input class="search-input mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">

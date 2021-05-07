@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Models\Comentario;
 use App\Models\Resena;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Carbon;
 
 class ComentariosController extends Controller
@@ -53,7 +54,7 @@ class ComentariosController extends Controller
         
         $resenaF = Resena::find([$resenaid]);
         $comentario->resena()->attach($resenaF);
-        return redirect()->route('resenas.userShow');
+        return Redirect::back()->withErrors(['msg', 'The Message']);
     }
 
     /**

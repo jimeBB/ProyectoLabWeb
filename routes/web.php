@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::resource('landingpage', 'LandingController');
-Route::resource('comentarios', 'ComentariosController')->middleware(['guest', 'normaluser']);
+Route::resource('comentarios', 'ComentariosController')->middleware(['guest']);
 Route::resource('resenas', 'ResenasController')->middleware(['guest']);
 Route::resource('users', 'UsersController')->middleware(['guest', 'normaluser']);
 
