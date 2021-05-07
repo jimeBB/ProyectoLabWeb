@@ -53,7 +53,7 @@ class ComentariosController extends Controller
         
         $resenaF = Resena::find([$resenaid]);
         $comentario->resena()->attach($resenaF);
-        return redirect()->route('comentarios.index');
+        return redirect()->route('resenas.userShow');
     }
 
     /**
