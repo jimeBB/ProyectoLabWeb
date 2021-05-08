@@ -198,7 +198,7 @@
                                                                 <li class="readMore"><a href="{{ route('resena.show-user', ['resena' => $item]) }}" class="more-button ">
                                                                         Leer más</a></li>
                                                                         
-                                                                <li  ><svg  onclick="updateLikes({{ $item->id }},{{ $item->likes }},{{Auth::user()->id}});" " xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                <li  ><svg  onclick="updateLikes({{ $item->id }},{{ $item->likes }})" onclick="callEvent()" xmlns="http://www.w3.org/2000/svg" width="16"
                                                                         height="16" fill="currentColor"
                                                                         class="bi bi-hand-thumbs-up-fill share-icon"
                                                                         viewBox="0 0 16 16" >
@@ -237,10 +237,11 @@
     
     @endsection
 
-    @push('layout_end_body')
-    <script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    
+    <script type="text/javascript">
 
-function updateLikes(resena_id, likes, usuario){
+function updateLikes(resena_id, likes){
        let durl = '{{ route('resena.likes', 0) }}'+resena_id+''
        $.ajax({
            url: durl,
@@ -250,13 +251,14 @@ function updateLikes(resena_id, likes, usuario){
                'X-CSRF-Token': $('meta[name="csrf-token"').attr('content')
            },
            data:{
-               resena_id:resena_id
+               resena_id: resena_id
            }
        }).done(function(response) {
+        console.log('Exito', response);
            let idLikes = ''+resena_id+'_likes'
-           document.getElementById(idLikes).innerHTML = likes + 1
-            console.log(usuario);
-           updateEvent(response.id, response.usuario_id,usuario );
+           document.getElementById(idLikes).innerHTML = response.likes 
+            
+           //updateEvent(response.id, response.usuario_id, usuario);
        })
        .fail(function(jqXHR, response) {
            console.log('Fallido', response);
@@ -264,29 +266,24 @@ function updateLikes(resena_id, likes, usuario){
    }
   
 
-   function updateEvent(id, escritor, usuario){
+ 
 
-let str = 'event/'+id+'/'+escritor+'/'+usuario
 
-$.ajax({
-    url: str,
-    method: 'GET',
-    headers:{
-        'Accept': 'application/json',
-        'X-CSRF-Token': $('meta[name="csrf-token"').attr('content')
-    }
-}).done(function(response) {
-    console.log( "Exito");
 
-})
-.fail(function(jqXHR, response) {
-    console.log('Fallido', jqXHR);
-});
-   }
+
+
+
+    // Echo is available via window.Echo, in app.js file
+    Echo.channel('activities')
+        .listen('.activity-monitor', (e) => {
+            console.log(e);
+        });
+
+
 
     </script>
 
- @endpush
+
 
 
 

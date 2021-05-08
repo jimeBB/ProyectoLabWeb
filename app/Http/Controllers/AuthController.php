@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Auth;
 use Redirect;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\Input;
+use App\Events\ActivityEvent;
+
 
 class AuthController extends Controller
 {
@@ -40,6 +42,8 @@ class AuthController extends Controller
 
     public function login(Request $req)
     {
+       
+         
         return view('auth.login');
     }
 
@@ -51,12 +55,14 @@ class AuthController extends Controller
             
             $user = Auth::user();
             $role = $user->role;
+            event(new ActivityEvent('login', $user));
 
             if ($role == 'admin')
                 return redirect()->route('landingpage.index');
 
             return redirect()->route('landingpage.index');
         }
+        
 
         $errors = new MessageBag(['password' => ['Email o contraseña incorrectos']]);
         return redirect()->back()->withErrors($errors);
@@ -64,9 +70,12 @@ class AuthController extends Controller
 
     public function logout(Request $req)
     {
+        $user = Auth::user();
         Auth::logout();
         $req->session()->invalidate();
         $req->session()->regenerateToken();
+        
+      
         return redirect()->route('landingpage.index');
     }
 }

@@ -7,6 +7,7 @@ use App\Models\Resena;
 use App\Models\Usuario;
 use Illuminate\Support\Facades\Auth;
 use App\Events\LikeEvent;
+use App\Events\ActivityEvent;
 
 class ResenasController extends Controller
 {
@@ -118,12 +119,12 @@ class ResenasController extends Controller
 
     public function updateLikes(Request $request, $id){
         
-        $action = $request->get('action');
         
         $resena = Resena::find($id);
        
         $resena->likes = $resena->likes + 1;
         $resena -> save();
+        event(new ActivityEvent('like', $resena));
         return response()->json($resena);
        
     }

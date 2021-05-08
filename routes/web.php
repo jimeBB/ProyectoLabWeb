@@ -1,9 +1,7 @@
 <?php
 
 use App\Http\Controllers\ResenasController;
-use App\Http\Models\Resenas;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Broadcast;
 use App\Events\LikeEvent;
 
 /*
@@ -22,10 +20,8 @@ Route::get('/', function () {
 });
 
 
-//Ruta para crear eventos en broadcast
-Route::get('/event/{comment}/{id_escritor}/{id_usuario}', function($comment, $id_escritor, $id_usuario){
-    event(new LikeEvent($comment, $id_escritor, $id_usuario));
-});
+
+
 
 
 Route::resource('landingpage', 'LandingController');

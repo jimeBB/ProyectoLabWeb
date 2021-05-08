@@ -14,7 +14,6 @@ class LikeEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    
     public $comment;
     public $id_escritor;
     public $id_usuario;
@@ -30,7 +29,6 @@ class LikeEvent implements ShouldBroadcast
         $this->id_usuario = $id_usuario;
         //
     }
-
 
     /**
      * Get the channels the event should broadcast on.
