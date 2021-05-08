@@ -7,7 +7,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <!-- Brand/logo -->
-        <a class="navbar-brand" href=""><img src="../imgs/logo-prov.png" width="48" height="48" alt="logo"></a>
+        <a class="navbar-brand" href="{{ route('landingpage.index') }}"><img src="../imgs/logo-prov.png" width="48" height="48" alt="logo"></a>
         <div class="search-bar">
         <form class="form-inline my-2 my-lg-0">
             <input class="search-input mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
@@ -26,7 +26,7 @@
             </ul>
 
             <ul class="navbar-nav log-in-div">
-                <li class="nav-item"><a class="nav-link" href="{{ url('/logout') }}""><button class="btn btn-primary btn-crear-resena" }"> logout </button></li></a>
+                <li class="nav-item"><a class="nav-link" href="{{ url('/logout') }}"><button class="btn btn-primary btn-crear-resena" }"> logout </button></li></a>
                 <li class="nav-item"><a class="nav-link" href="{{ route('resenas.create') }}">
                     <button type="button" class="btn btn-primary btn-crear-resena">Crear reseña</button></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"></a></li>
@@ -47,7 +47,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <!-- Brand/logo -->
-            <a class="navbar-brand" href=""><img src="../imgs/logo-prov.png" width="48" height="48" alt="logo"></a>
+            <a class="navbar-brand" href="{{ route('landingpage.index') }}"><img src="../imgs/logo-prov.png" width="48" height="48" alt="logo"></a>
             <div class="search-bar">
             <form class="form-inline my-2 my-lg-0">
                 <input class="search-input mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
@@ -66,7 +66,7 @@
                 </ul>
 
                 <ul class="navbar-nav log-in-div">
-                    <li class="nav-item"><a class="nav-link" href= "{{ route('auth.login')}} " ><button type="button"
+                    <li class="nav-item"><a class="nav-link" href= "{{ route('auth.login')}} "><button type="button"
                                 class="btn btn-primary btn-log-in">Log in</button></a></li>
                     <li class="nav-item"><a class="nav-link" href = "{{ route('auth.register')}} "><button type="button"
                                 class="btn btn-primary btn-log-in">Sign in</button></li></a>
@@ -106,11 +106,29 @@
                 </div>
                 
             </div>
-            <div class="reactions">
+            <!--<div class="reactions">
                 <h1 style="display:inline;">{{$resena->likes}}<h1>
                 <h1 style="display:inline;">#likes</h1>
                 <h1 style="display:inline;">#comentarios</h1>
                 <h1 style="display:inline;">#compartir</h1>
+            </div>-->
+
+            <div class="reactions">
+                <h1 style="display:inline;" class="like">
+                    {{$resena->likes}}
+                    <img src="../imgs/likes.png" class="icon-act">
+                    <span class="tooltiptext">Like</span>
+                </h1>
+                <h1 style="display:inline;" class="comments">
+                    20 
+                    <img src="../imgs/comment.png" class="icon-act">
+                    <span class="tooltiptext">Comments</span>
+                </h1>
+                <h1 style="display:inline;" class="share">
+                    44 
+                    <img src="../imgs/share.png" class="icon-act">
+                    <span class="tooltiptext">Share</span>
+                </h1>
             </div>
         </div>
     </div>
@@ -118,37 +136,40 @@
     <!--Comment section-->
     <div id="body-container">
         <div id="comments-section">
-            
-            <div class="user-comment" style="display:none;">
+        @if (Auth::check())
+            <form action="{{ route('comentarios.store' , ['resena' => $resena])}}" method="POST">
+                @csrf
+                <div class="user-comment-np">
+                    <h1>¡Escribe un comentario!</h1>
+                    <textarea name ="texto" required></textarea>
+                
+                    <div class="buttons">
+                        <a class="nav-link" href="#" style="display:inline;">
+                            <input type="submit" value="Comentar">
+                        </a>
+                    </div>
+                </div>
+            </form>
+        @else
+            <div class="user-comment">
                 <h1>¡Escribe un comentario!</h1>
             
                 <div class="buttons">
-                    <a class="nav-link" href="#" style="display:inline;">
+                    <a class="nav-link" href="{{ route('auth.login')}} " style="display:inline;">
                     <button type="button" class="btn btn-primary btn-log-in">
                         Log in
+                        
                     </button>
                     </a>
-                    <a class="nav-link" href="#" style="display:inline;">
+                    <a class="nav-link" href="{{ route('auth.register')}} " style="display:inline;">
                         <button type="button" class="btn btn-primary btn-log-in">
                             Sign up
                         </button>
                     </a>
                 </div>
             </div>
+        @endif    
             
-            <form action="{{ route('comentarios.store' , ['resena' => $resena])}}" method="POST">
-                @csrf
-            <div class="user-comment-np" style="display:inline;">
-                <h1>¡Escribe un comentario!</h1>
-                <textarea name ="texto" required></textarea>
-               
-                <div class="buttons">
-                    <a class="nav-link" href="#" style="display:inline;">
-                        <input type="submit" value="Store">
-                    </a>
-                </div>
-            </div>
-        </form>
        
         @foreach($resena->comentario as $comentario)
             <div class="generic-comment">
@@ -169,8 +190,6 @@
                     </div>
                 </div>
             </div>
-
-        </div>
         @endforeach
     </div>
 @endsection

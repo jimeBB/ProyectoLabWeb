@@ -80,16 +80,72 @@ html, body {
 }
 
 #review-container .reactions{
-    border-style: solid;
-    border-radius: 5px;
+    border-top: solid;
     border-width: 0.5px;
     position: relative;
-    text-align: center;
+    text-align: right;
+    margin-top: 20px;
     margin-bottom: 50px;
 }
 #review-container .reactions h1{
+    position: relative;
+    top: 10px;
     font-size: 20px;
-    margin-left: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+#review-container .reactions h1:hover{
+    color: orange;
+    cursor: pointer;
+}
+
+.icon-act{
+    position: relative;
+    top: 50%;
+    transform: translateY(-10%);
+    width: 20px;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: orange;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.like:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+.comments:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+.share:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 
 /*--------------------------------------*/
@@ -134,11 +190,22 @@ html, body {
     position: relative;
     margin-top: -5px;
 }
-.user-comment-np .buttons button{
-    position: relative;
-    border-radius: 0px;
-    left: 86%;
+.user-comment-np .buttons input{
+    background-color: orange;
+    border-style: 5px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: white;
+    border-style: none;
+    border-color: black;
+    border-width: 0.5px;
     margin-bottom: 10px;
+    position: absolute;
+    right: 20px;
+}
+.user-comment-np .buttons input:hover{
+    background-color: darkorange;
+    font-size: 25px;
 }
 
 /*--------------------------------------*/
@@ -147,9 +214,8 @@ html, body {
     margin-top: 20px;
 }
 .generic-comment .comment-info{
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
+    border-left: solid;
+    border-width: 0.5px;
     height: 50px;
     position: relative;
 }
@@ -161,8 +227,7 @@ html, body {
     transform: translateY(-50%);
 }
 .generic-comment .comment-info h1{
-    font-size: 25px;
-    margin-right: 5px;
+    font-size: 15px;
     line-height: 40px;
 }
 .generic-comment .comment-info div{
@@ -180,17 +245,14 @@ html, body {
 }
 
 .generic-comment .comment-text{
-    border-style: solid;
-    border-top: none;
-    border-width: 1px;
+    border-right: solid;
+    border-width: 0.5px;
     position: relative;
 }
 .generic-comment .comment-text p{
     top: 50%;
-    width: 95%;
+    width: 89%;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
 }
-
-
