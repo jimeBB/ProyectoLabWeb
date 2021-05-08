@@ -198,7 +198,7 @@
                                                                 <li class="readMore"><a href="{{ route('resena.show-user', ['resena' => $item]) }}" class="more-button ">
                                                                         Leer más</a></li>
                                                                         
-                                                                <li  ><svg  onclick="updateLikes({{ $item->id }},{{ $item->likes }},{{Auth::user()->id}});" " xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                <li  ><svg  onclick="updateLikes({{ $item->id }},{{ $item->likes }})"xmlns="http://www.w3.org/2000/svg" width="16"
                                                                         height="16" fill="currentColor"
                                                                         class="bi bi-hand-thumbs-up-fill share-icon"
                                                                         viewBox="0 0 16 16" >
