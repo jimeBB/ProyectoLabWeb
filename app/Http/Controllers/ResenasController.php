@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Resena;
 use App\Models\Usuario;
 use Illuminate\Support\Facades\Auth;
+use App\Events\LikeEvent;
 
 class ResenasController extends Controller
 {
@@ -112,6 +113,21 @@ class ResenasController extends Controller
 
         return redirect()->route('resenas.index');
     }
+
+    
+
+    public function updateLikes(Request $request, $id){
+        
+        $action = $request->get('action');
+        
+        $resena = Resena::find($id);
+       
+        $resena->likes = $resena->likes + 1;
+        $resena -> save();
+        return response()->json($resena);
+       
+    }
+
 
     /**
      * Remove the specified resource from storage.

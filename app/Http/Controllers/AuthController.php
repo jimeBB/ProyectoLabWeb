@@ -48,6 +48,7 @@ class AuthController extends Controller
         $credentials = $req->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
+            
             $user = Auth::user();
             $role = $user->role;
 

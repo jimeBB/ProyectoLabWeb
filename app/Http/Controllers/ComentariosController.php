@@ -6,6 +6,7 @@ use App\Models\Comentario;
 use App\Models\Resena;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Redirect;
 
 class ComentariosController extends Controller
 {
@@ -38,6 +39,7 @@ class ComentariosController extends Controller
      */
     public function store(Request $request, Resena $resena)
     {
+       
         
         $date = Carbon::now('America/Mexico_City');
         $dateBlock = Carbon::parse('2030-10-05 23:00:00', 'America/Mexico_city');
@@ -53,7 +55,8 @@ class ComentariosController extends Controller
         
         $resenaF = Resena::find([$resenaid]);
         $comentario->resena()->attach($resenaF);
-        return redirect()->route('comentarios.index');
+        
+        return Redirect::back()->withErrors(['msg', 'The Message']);
     }
 
     /**

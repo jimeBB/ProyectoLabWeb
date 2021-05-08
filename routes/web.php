@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\ResenasController;
+use App\Http\Models\Resenas;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Broadcast;
+use App\Events\LikeEvent;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +21,21 @@ Route::get('/', function () {
     return redirect()->route('landingpage.index');
 });
 
+
+//Ruta para crear eventos en broadcast
+Route::get('/event/{comment}/{id_escritor}/{id_usuario}', function($comment, $id_escritor, $id_usuario){
+    event(new LikeEvent($comment, $id_escritor, $id_usuario));
+});
+
+
 Route::resource('landingpage', 'LandingController');
-Route::resource('comentarios', 'ComentariosController')->middleware(['guest', 'normaluser']);
+Route::resource('comentarios', 'ComentariosController')->middleware(['guest']);
 Route::resource('resenas', 'ResenasController')->middleware(['guest']);
+
+
+
+
+
 Route::resource('users', 'UsersController')->middleware(['guest', 'normaluser']);
 
 Route::get('register', 'AuthController@register')->name('auth.register');
@@ -29,4 +44,7 @@ Route::get('login', 'AuthController@login')->name('auth.login');
 Route::post('login', 'AuthController@doLogin')->name('auth.do-login');
 Route::any('logout', 'AuthController@logout')->name('auth.logout');
 Route::get('showUser/{resena}', 'ResenasController@showUser')->name('resena.show-user');
+Route::put('showUser/likes/{resena}', 'ResenasController@updateLikes');
+
+Route::put('/user/{id}', [ResenasController::class, 'updateLikes'])->name('resena.likes');
 
