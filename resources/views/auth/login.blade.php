@@ -27,5 +27,6 @@
             <hr class="my-4">
             <input class="btn btn-lg btn-primary btn-block text-uppercase mt-4" type="submit" value="Ingresar">
         </form>
+        <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="false"></div>
     </div>
 @endsection
