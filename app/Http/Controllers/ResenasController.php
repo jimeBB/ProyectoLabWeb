@@ -20,6 +20,7 @@ class ResenasController extends Controller
     public function index()
     {
         $resena = Resena::all();
+        
         return view('resenas.index', ['resena' => $resena]);
     }
 

@@ -16,7 +16,28 @@ class LandingController extends Controller
     public function index()
     {
         $resena = Resena::all();
+        
+       
         return view('landingPage.guest', ['resena' => $resena]);
+    }
+
+    public function search(Request $request){
+      
+        $resena = Resena::where([
+            ['titulo', '!=', Null],
+            [function ($query) use ($request){
+                if(($termino = $request->termino)){
+                    $query->orWhere('titulo', 'LIKE', '%' . $termino . '%')->get();
+                }
+            }
+            ]
+        ])
+        ->orderBy("id", "desc")
+        ->paginate(10);
+
+        return view('landingpage.guest', ['resena' => $resena]);
+        
+
     }
 
     /**
