@@ -38,7 +38,7 @@
         </div>
     </div>
 </nav>
-<form action="{{ route('resenas.store') }}" method="POST">
+<form action="{{ route('resenas.store') }}" method="POST" action="" enctype="multipart/form-data" >
     @csrf
     <div id="body-container">
         <div id="review-container"> 
@@ -74,7 +74,7 @@
             </div>
             <div class="image-uploader">
                 <h1 style="display:inline;">Sube una imagen para la portada</h1>
-                <input type="file" id="img" name="url" accept="image/*" required>
+                <input name="url" type="file" id="img"  required>
             </div>
         </div>
 

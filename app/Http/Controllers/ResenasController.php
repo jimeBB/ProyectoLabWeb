@@ -8,6 +8,7 @@ use App\Models\Usuario;
 use Illuminate\Support\Facades\Auth;
 use App\Events\LikeEvent;
 use App\Events\ActivityEvent;
+use Illuminate\Http\UploadedFile;
 
 class ResenasController extends Controller
 {
@@ -45,6 +46,8 @@ class ResenasController extends Controller
      */
     public function store(Request $request)
     {
+
+        //dd($request);
         $user = Auth::user();
 
         $arr = $request->input();
@@ -53,14 +56,32 @@ class ResenasController extends Controller
         $resena->titulo = $arr['titulo'];
         $resena->fecha_creacion = $arr['fecha_creacion'];
         $resena->categoria = $arr['categoria'];
-        $resena->url = $arr['url'];
+       
         $resena->texto = $arr['texto'];
         $resena->likes = 4;
         $resena->usuario_id = $user->id;
-
-        $resena->save();
-
-        return redirect()->route('landingpage.index');
+ 
+        if ($request->hasFile('url')) {
+            $filenameWithExt = $request->file('url')->getClientOriginalName ();
+            // Get Filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            
+            
+            // Get just Extension
+            $extension = $request->file('url')->getClientOriginalExtension();
+            // Filename To store
+            $fileNameToStore = $filename. '_'. time().'.'.$extension;
+            $path = $request->file('url')->storeAs('public/imgs', $fileNameToStore);
+            $resena->url =  $fileNameToStore ;
+            $resena->save();
+              
+            return redirect()->route('landingpage.index');
+            }
+            // Else add a dummy image
+            else {
+            $fileNameToStore = 'noimage.jpg';
+            }
+       
     }
 
     /**

@@ -139,7 +139,7 @@
                                         <figure class="card-image-review">
                                             <a href="">
                                                 <!-- Checar como poner imagen -->
-                                                <img src=" {{ $item->url }}" class="card-image" alt="""> </a>
+                                                <img src= "/storage/imgs/{{$item->url}}" class="card-image" alt="""> </a>
                                         </figure>
                                         </div>
                                 <div class=" col-md-7">
