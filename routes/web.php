@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\ResenasController;
 use Illuminate\Support\Facades\Route;
-use App\Events\LikeEvent;
+use App\Events\LikeNotification;
+use Illuminate\Support\Facades\App;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,20 +16,23 @@ use App\Events\LikeEvent;
 |
 */
 
+
+
 Route::get('/', function () {
     return redirect()->route('landingpage.index');
 });
 
 
-
-
+Route::view('/welcome', 'test');
 
 
 Route::resource('landingpage', 'LandingController');
 Route::resource('comentarios', 'ComentariosController')->middleware(['guest']);
 Route::resource('resenas', 'ResenasController')->middleware(['guest']);
 
-
+Route::get('/user/{id}', function($reseña){
+    event(new LikeNotification($reseña));
+});
 
 
 

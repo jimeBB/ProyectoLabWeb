@@ -1,13 +1,15 @@
 <?php
 
+
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Route;
 
 use Illuminate\Http\Request;
 use App\Models\Resena;
 use App\Models\Usuario;
+use App\Events\LikeNotification;
 use Illuminate\Support\Facades\Auth;
-use App\Events\LikeEvent;
-use App\Events\ActivityEvent;
+
 
 class ResenasController extends Controller
 {
@@ -124,8 +126,11 @@ class ResenasController extends Controller
        
         $resena->likes = $resena->likes + 1;
         $resena -> save();
-        event(new ActivityEvent('like', $resena));
+        
+        event(new LikeNotification('hello world'));
         return response()->json($resena);
+        
+        
        
     }
 

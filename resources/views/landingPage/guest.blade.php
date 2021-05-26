@@ -5,6 +5,8 @@
 @section('content')
 
 
+
+
 @if (Auth::check())
 
 <!-- Navbar inicio-->
@@ -198,7 +200,7 @@
                                                                 <li class="readMore"><a href="{{ route('resena.show-user', ['resena' => $item]) }}" class="more-button ">
                                                                         Leer más</a></li>
                                                                         
-                                                                <li  ><svg  onclick="updateLikes({{ $item->id }},{{ $item->likes }})" onclick="callEvent()" xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                <li  ><svg  onclick="updateLikes({{ $item->id }},{{ $item->likes }})"  xmlns="http://www.w3.org/2000/svg" width="16"
                                                                         height="16" fill="currentColor"
                                                                         class="bi bi-hand-thumbs-up-fill share-icon"
                                                                         viewBox="0 0 16 16" >
@@ -235,11 +237,16 @@
 
     <!-- Body Final-->
     
-    @endsection
+   
 
-    <script src="{{ asset('js/app.js') }}"></script>
-    
-    <script type="text/javascript">
+   
+    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="module" src="{{asset('js/app.js')}}"></script>
+    @yield('scripts')
+  
+    <script >
+       
 
 function updateLikes(resena_id, likes){
        let durl = '{{ route('resena.likes', 0) }}'+resena_id+''
@@ -266,22 +273,22 @@ function updateLikes(resena_id, likes){
    }
   
 
- 
+
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
 
 
 
+    window.Echo.channel(`LikesChannel`).listen('.LikeNotification', (e) => {
+        // DELETE PRUDCTO DE VISTA
+        console.log(e);
+    })
 
-
-
-    // Echo is available via window.Echo, in app.js file
-    Echo.channel('activities')
-        .listen('.activity-monitor', (e) => {
-            console.log(e);
-        });
-
+   
 
 
     </script>
+     @endsection
 
 
 

@@ -1,42 +1,28 @@
 <?php
+ namespace App\Broadcasting;
 
-namespace App\Events;
+use App\Models\User;
 
-use Illuminate\Broadcasting\Channel;
-use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Broadcasting\PresenceChannel;
-use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
-use Illuminate\Foundation\Events\Dispatchable;
-use Illuminate\Queue\SerializesModels;
-
-class CommentsEvent implements ShouldBroadcast
+class LikesChannel
 {
-    use Dispatchable, InteractsWithSockets, SerializesModels;
-
-    public $comment;
-    public $id_escritor;
-    public $id_usuario;
     /**
-     * Create a new event instance.
+     * Create a new channel instance.
      *
      * @return void
      */
-    public function __construct($comment, $id_escritor, $id_usuario)
+    public function __construct()
     {
-        $this->comment = $comment;
-        $this->id_escritor = $id_escritor;
-        $this->id_usuario = $id_usuario;
         //
     }
 
     /**
-     * Get the channels the event should broadcast on.
+     * Authenticate the user's access to the channel.
      *
-     * @return \Illuminate\Broadcasting\Channel|array
+     * @param  \App\Models\User  $user
+     * @return array|bool
      */
-    public function broadcastOn()
+    public function join(User $user)
     {
-        return new Channel('commentsChannel');
+        //
     }
 }
