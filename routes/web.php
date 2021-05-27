@@ -41,25 +41,17 @@ Route::put('showUser/likes/{resena}', 'ResenasController@updateLikes');
 Route::get('landingpageSearch', 'LandingController@search')->name('landingpage.search');
 Route::put('/user/{id}', [ResenasController::class, 'updateLikes'])->name('resena.likes');
 
-Route::get('/auth/redirect', function () {
-    return Socialite::driver('github')->redirect();
-});
-
-Route::get('/auth/redirect', function () {
+Route::get('/auth/facebook/redirect', function () {
     return Socialite::driver('facebook')->redirect();
 });
 
-Route::get('/auth/callback', function () {
-    $user = Socialite::driver('github')->user();
+Route::get('/auth/facebook/callback', function () {
+    $user = Socialite::driver('facebook')->user();
 
     // OAuth 2.0 providers...
     $token = $user->token;
     $refreshToken = $user->refreshToken;
     $expiresIn = $user->expiresIn;
-
-    // OAuth 1.0 providers...
-    $token = $user->token;
-    $tokenSecret = $user->tokenSecret;
 
     // All providers...
     $user->getId();
@@ -69,8 +61,16 @@ Route::get('/auth/callback', function () {
     $user->getAvatar();
 });
 
-Route::get('/auth/callback', function () {
-    $user = Socialite::driver('facebook')->user();
+/*Route::get('auth/facebook', [FbController::class, 'redirectToFacebook']);
+
+Route::get('auth/facebook', [FbController::class, 'facebookSignin']);*/
+
+Route::get('/auth/github/redirect', function () {
+    return Socialite::driver('github')->redirect();
+});
+
+Route::get('/auth/github/callback', function () {
+    $user = Socialite::driver('github')->user();
 
     // OAuth 2.0 providers...
     $token = $user->token;

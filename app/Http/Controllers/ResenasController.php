@@ -20,7 +20,7 @@ class ResenasController extends Controller
     public function index()
     {
         $resena = Resena::all();
-        
+
         return view('resenas.index', ['resena' => $resena]);
     }
 
@@ -33,12 +33,12 @@ class ResenasController extends Controller
     {
         return view('resenas.crear');
     }
-      /**
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -55,34 +55,33 @@ class ResenasController extends Controller
         $resena = new Resena();
         $resena->nombre = $user->name;
         $resena->titulo = $arr['titulo'];
-        $resena->fecha_creacion = $arr['fecha_creacion'];
+        //$resena->fecha_creacion = date("Y-m-d");
         $resena->categoria = $arr['categoria'];
-       
+
         $resena->texto = $arr['texto'];
         $resena->likes = 4;
         $resena->usuario_id = $user->id;
- 
+
         if ($request->hasFile('url')) {
-            $filenameWithExt = $request->file('url')->getClientOriginalName ();
+            $filenameWithExt = $request->file('url')->getClientOriginalName();
             // Get Filename
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            
-            
+
+
             // Get just Extension
             $extension = $request->file('url')->getClientOriginalExtension();
             // Filename To store
-            $fileNameToStore = $filename. '_'. time().'.'.$extension;
+            $fileNameToStore = $filename . '_' . time() . '.' . $extension;
             $path = $request->file('url')->storeAs('public/imgs', $fileNameToStore);
-            $resena->url =  $fileNameToStore ;
+            $resena->url =  $fileNameToStore;
             $resena->save();
-              
+
             return redirect()->route('landingpage.index');
-            }
-            // Else add a dummy image
-            else {
+        }
+        // Else add a dummy image
+        else {
             $fileNameToStore = 'noimage.jpg';
-            }
-       
+        }
     }
 
     /**
@@ -96,10 +95,10 @@ class ResenasController extends Controller
         return view('resenas.show', ['resena' => $resena]);
     }
 
-  
-    public function showUser( Resena $resena)
+
+    public function showUser(Resena $resena)
     {
-        
+
         return view('resenas.userShow', ['resena' => $resena]);
     }
 
@@ -126,7 +125,6 @@ class ResenasController extends Controller
         $arr = $request->input();
         $resena->nombre = $arr['nombre'];
         $resena->titulo = $arr['titulo'];
-        $resena->fecha_creacion = $arr['fecha_creacion'];
         $resena->categoria = $arr['categoria'];
         $resena->url = $arr['url'];
         $resena->texto = $arr['texto'];
@@ -137,18 +135,18 @@ class ResenasController extends Controller
         return redirect()->route('resenas.index');
     }
 
-    
 
-    public function updateLikes(Request $request, $id){
-        
-        
+
+    public function updateLikes(Request $request, $id)
+    {
+
+
         $resena = Resena::find($id);
-       
+
         $resena->likes = $resena->likes + 1;
-        $resena -> save();
+        $resena->save();
         event(new ActivityEvent('like', $resena));
         return response()->json($resena);
-       
     }
 
 

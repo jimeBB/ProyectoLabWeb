@@ -13,12 +13,12 @@
         <!-- Brand/logo -->
         <a class="navbar-brand" href="route('landingpage.index')"><img src="../imgs/logo-prov.png" width="48" height="48" alt="logo"></a>
         <div class="search-bar">
-        <form action="{{ route('landingpage.search') }}" method="GET" role="search" class="form-inline my-2 my-lg-0">
-            <input  name = 'termino' class="search-input mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-            <button class="btn  btn-search-nav my-2 my-sm-0" type="submit"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                </svg></button>
-        </form>
+            <form action="{{ route('landingpage.search') }}" method="GET" role="search" class="form-inline my-2 my-lg-0">
+                <input  name = 'termino' class="search-input mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn  btn-search-nav my-2 my-sm-0" type="submit"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg></button>
+            </form>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
             aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +32,7 @@
             <ul class="navbar-nav log-in-div">
                 @if (Auth::user()->role=="admin")
                     <li class="nav-item"><a class="nav-link" href="{{ route('users.index') }}"><button class="btn btn-primary btn-crear-resena" }> Dashboard </button></li></a>
-                @endif 
+                @endif
                 <li class="nav-item"><a class="nav-link" href="{{ url('/logout') }}"><button class="btn btn-primary btn-crear-resena" }> logout </button></li></a>
                 <li class="nav-item"><a class="nav-link" href="{{ route('resenas.create') }}">
                     <button type="button" class="btn btn-primary btn-crear-resena">Crear reseña</button></a></li>
@@ -49,7 +49,7 @@
 <!-- Navbar loggeado Final-->
 
     <!-- Navbar no loggeado inicio-->
-    @else
+@else
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <!-- Brand/logo -->
@@ -75,7 +75,7 @@
                     <li class="nav-item"><a class="nav-link" href= "{{ route('auth.login')}} " ><button type="button"
                                 class="btn btn-primary btn-log-in">Log in</button></a></li>
                     <li class="nav-item"><a class="nav-link" href = "{{ route('auth.register')}} "><button type="button"
-                                class="btn btn-primary btn-log-in">Sign in</button></li></a>
+                                class="btn btn-primary btn-log-in">Register</button></li></a>
                     <li class="nav-item nav-item-profile"> <a class="nav-link" href="#"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                 class="bi bi-person-fill" viewBox="0 0 16 16">
@@ -86,7 +86,7 @@
             </div>
         </div>
     </nav>
-    @endif
+@endif
 
     <!-- Navbar Final-->
 
@@ -146,7 +146,7 @@
                                                 <div class="review-wrapper">
                                                     <div class="main-review-content">
                                                         <span class="tags">
-                                                            <a href="">{{ $item->categoria }}</a> 
+                                                            <a href="">{{ $item->categoria }}</a>
                                                         </span>
                                                         <div class="review-header">
                                                             <h2 class="review-title"><a>{{ $item->titulo }}</a></h2>
@@ -192,12 +192,12 @@
                                                             <p></p>
                                                         </div>
                                                         <div class="review-footer ">
-         
+
                                                             <ul class="review-share">
-                                                                
+
                                                                 <li class="readMore"><a href="{{ route('resena.show-user', ['resena' => $item]) }}" class="more-button ">
                                                                         Leer más</a></li>
-                                                                        
+
                                                                 <li  ><svg  onclick="updateLikes({{ $item->id }},{{ $item->likes }})" onclick="callEvent()" xmlns="http://www.w3.org/2000/svg" width="16"
                                                                         height="16" fill="currentColor"
                                                                         class="bi bi-hand-thumbs-up-fill share-icon"
@@ -234,11 +234,11 @@
     </div>
 
     <!-- Body Final-->
-    
+
     @endsection
 
     <script src="{{ asset('js/app.js') }}"></script>
-    
+
     <script type="text/javascript">
 
 function updateLikes(resena_id, likes){
@@ -256,17 +256,17 @@ function updateLikes(resena_id, likes){
        }).done(function(response) {
         console.log('Exito', response);
            let idLikes = ''+resena_id+'_likes'
-           document.getElementById(idLikes).innerHTML = response.likes 
-            
+           document.getElementById(idLikes).innerHTML = response.likes
+
            //updateEvent(response.id, response.usuario_id, usuario);
        })
        .fail(function(jqXHR, response) {
            console.log('Fallido', response);
        });
    }
-  
 
- 
+
+
 
 
 

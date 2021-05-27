@@ -27,6 +27,21 @@
             <hr class="my-4">
             <input class="btn btn-lg btn-primary btn-block text-uppercase mt-4" type="submit" value="Ingresar">
         </form>
-        <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="false"></div>
+
+        <div class="flex items-center justify-end mt-4">
+            <a class="btn" href="{{ url('auth/facebook/redirect') }}"
+                style="background-color: #3B5499; color: #ffffff; padding: 8px; width: 100%; text-align: center; display: block; border-radius:4px;">
+                Login with Facebook
+            </a>
+        </div>
+
+        <div class="flex items-center justify-end mt-4">
+            <a class="btn" href="{{ url('auth/github/redirect') }}"
+                style="background-color: transparent; color: #000; padding: 8px; width: 100%; text-align: center; display: block; border-radius:4px; border: 1px solid">
+                Login with Github
+            </a>
+        </div>
+
+        <p class="my-3">No tienes cuenta? Registrate <a href="{{url('register')}}">aquí</a></p>
     </div>
 @endsection

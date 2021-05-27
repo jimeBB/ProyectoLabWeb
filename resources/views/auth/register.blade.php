@@ -30,7 +30,7 @@
                 <input type="email" name="email" class="form-control" placeholder="Correo Electrónico" required>
             </div>
 
-            
+
             <div class="form-label-group mt-3">
                 <label>Ingrese su fecha de nacimiento</label>
                 <input type="date" name="birthday" class="form-control" required>
@@ -46,6 +46,21 @@
 
             <hr class="my-4">
             <input class="btn btn-lg btn-primary btn-block text-uppercase mt-4" type="submit" value="Registrarse">
+
+            <div class="flex items-center justify-end mt-4">
+                <a class="btn" href="{{ url('auth/facebook/redirect') }}"
+                    style="background-color: #3B5499; color: #ffffff; padding: 8px; width: 100%; text-align: center; display: block; border-radius:4px;">
+                    Register with Facebook
+                </a>
+            </div>
+
+            <div class="flex items-center justify-end mt-4">
+                <a class="btn" href="{{ url('auth/github/redirect') }}"
+                    style="background-color: transparent; color: #000; padding: 8px; width: 100%; text-align: center; display: block; border-radius:4px; border: 1px solid">
+                    Register with Github
+                </a>
+            </div>
+            <p class="my-3">Ya tienes cuenta? <a href="{{url('login')}}">Log in</a></p>
         </form>
     </div>
 @endsection

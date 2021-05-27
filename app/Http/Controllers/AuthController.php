@@ -29,7 +29,7 @@ class AuthController extends Controller
             'email' => 'required|email:rfc,dns|unique:users',
             'birthday' => 'date',
             'password' => 'required|confirmed|min:6',
-            
+
         ])->validate();
 
         $data['password'] = Hash::make($data['password']);
@@ -42,8 +42,8 @@ class AuthController extends Controller
 
     public function login(Request $req)
     {
-       
-         
+
+
         return view('auth.login');
     }
 
@@ -52,7 +52,7 @@ class AuthController extends Controller
         $credentials = $req->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            
+
             $user = Auth::user();
             $role = $user->role;
             event(new ActivityEvent('login', $user));
@@ -62,7 +62,7 @@ class AuthController extends Controller
 
             return redirect()->route('landingpage.index');
         }
-        
+
 
         $errors = new MessageBag(['password' => ['Email o contraseña incorrectos']]);
         return redirect()->back()->withErrors($errors);
@@ -74,8 +74,8 @@ class AuthController extends Controller
         Auth::logout();
         $req->session()->invalidate();
         $req->session()->regenerateToken();
-        
-      
+
+
         return redirect()->route('landingpage.index');
     }
 }

@@ -41,7 +41,7 @@
 <form action="{{ route('resenas.store') }}" method="POST" action="" enctype="multipart/form-data" >
     @csrf
     <div id="body-container">
-        <div id="review-container"> 
+        <div id="review-container">
             <div class="info">
                 <h1>Crear reseña</h1>
                 <div class="form-group">
@@ -49,20 +49,15 @@
                     <small id="emailHelp" class="form-text text-muted">Ponle un título cool.</small>
                 </div>
             </div><br>
-            
-           
-            <div class="form-group" style="margin-bottom:30px;">
-                    <input class="form-control" type="date" name="fecha_creacion" value="2011-08-19" id="example-date-input" required>
-            </div>
 
             <div class="tags">
                 <h1 style="display:inline;">Categoría:</h1>
                 <select class="form-select" name="categoria" aria-label="Default select example" required>
                   <option selected>Escoge una categoría</option>
-                  <option value="1">Cine</option>
-                  <option value="2">Videojuegos</option>
-                  <option value="3">Libros</option>
-                  <option value="4">Series de TV</option>
+                  <option value="cine">Cine</option>
+                  <option value="videojuegos">Videojuegos</option>
+                  <option value="libros">Libros</option>
+                  <option value="tvseries">Series de TV</option>
                 </select>
             </div>
 
@@ -82,7 +77,7 @@
     <div id="button-container">
         <div class="buttons">
             <a class="nav-link" href="#">
-                <input type="submit" value="Publicar" class="btn-publicar"></input>
+                <input type="submit" value="Publicar" class="btn-publicar" />
             </a>
         </div><br>
     </div>

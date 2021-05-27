@@ -6,13 +6,13 @@ h1 {
     font-family: arial, sans-serif;
 }
 p {
-    font-family: arial, sans-serif; 
+    font-family: arial, sans-serif;
 }
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 80%;
-  
+
 }
 
 td, th {
@@ -57,7 +57,7 @@ tr:nth-child(even) {
         <tr>
             <td>{{ $resena->id }}</td>
             <td>{{ $resena->nombre }}</td>
-            <td>{{ $resena->fecha_creacion }}</td>
+            <td>{{ $resena->created_at }}</td>
             <td>{{ $resena->categoria }}</td>
             <td>{{ $resena->likes}}</td>
             <td>{{ $resena->usuario->nombre}}</td>
