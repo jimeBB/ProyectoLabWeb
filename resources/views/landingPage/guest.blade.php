@@ -40,10 +40,14 @@
                         <button type="button" class="btn btn-primary btn-crear-resena">Crear reseña</button>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <span class="mini-profilepic" role="link" tabindex="0" style="width: 40px; height: 40px;">
-                        <img alt="Foto del perfil" class="image-profile" data-testid="user-avatar" draggable="false" src="imgs/profilepic.jpeg">
-                    </span>
+                <li class="nav-item nav-item-profile">
+                    <a class="nav-link">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        </svg>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -84,11 +88,15 @@
                                 class="btn btn-primary btn-log-in">Log in</button></a></li>
                     <li class="nav-item"><a class="nav-link" href = "{{ route('auth.register')}} "><button type="button"
                                 class="btn btn-primary btn-log-in">Register</button></li></a>
-                    <li class="nav-item nav-item-profile"> <a class="nav-link" href="#"><svg
+                    <li class="nav-item nav-item-profile">
+                        <a class="nav-link" href="#">
+                            <svg
                                 xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                 class="bi bi-person-fill" viewBox="0 0 16 16">
                                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                            </svg></a></li>
+                            </svg>
+                        </a>
+                    </li>
 
                 </ul>
             </div>
@@ -104,39 +112,42 @@
             <div class="col-md-2">
             </div>
             <div class="col-md-8">
-
                 <div class="row">
                      <!-- Parte central -->
                     <div class="col-md-12">
                         <!-- Navbar de filtrado -->
                         <nav class="nav nav-tools">
-                            <a class="nav-link active" aria-current="page" href="#"><svg
+                            <a class="nav-link active" aria-current="page" href="/top">
+                                <svg
                                     xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-star-fill" viewBox="0 0 16 16">
                                     <path
                                         d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                </svg> Top</a>
-                            <a class="nav-link" href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                </svg>
+                                Top
+                            </a>
+                            <a class="nav-link" href="/new">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z" />
-                                </svg> New</a>
-
-                            <a class="nav-link" href="#"> <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20"><title>Hot</title><path d="M10.31.61a.5.5,0,0,0-.61,0C9.41.83,2.75,6.07,2.75,11.47a8.77,8.77,0,0,0,3.14,6.91.5.5,0,0,0,.75-.64,3.84,3.84,0,0,1-.55-2A7.2,7.2,0,0,1,10,9.56a7.2,7.2,0,0,1,3.91,6.23,3.84,3.84,0,0,1-.55,2,.5.5,0,0,0,.75.64,8.77,8.77,0,0,0,3.14-6.91C17.25,6.07,10.59.83,10.31.61Z"></path>
-                            </svg> Hot</a>
-
-                            <div class="dropdown">
-                                <a class=" dropdown-toggle nav-link" type="button" id="dropdownMenuButton1"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Categoría
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" href="#">Cine</a></li>
-                                    <li><a class="dropdown-item" href="#">Videojuegos</a></li>
-                                    <li><a class="dropdown-item" href="#">Libros</a></li>
-                                    <li><a class="dropdown-item" href="#">Series de TV</a></li>
-                                </ul>
-                            </div>
+                                    <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z" />
+                                </svg>
+                                New
+                            </a>
+                            <a class="nav-link" href="/cine">
+                                Cine
+                            </a>
+                            <a class="nav-link" href="/videojuegos">
+                                Videojuegos
+                            </a>
+                            <a class="nav-link" href="/libros">
+                                Libros
+                            </a>
+                            <a class="nav-link" href="/seriestv">
+                                Series de TV
+                            </a>
+                            <a class="nav-link" href="/otros">
+                                Otros
+                            </a>
                         </nav>
                         @foreach ($resena as $item)
                         <!-- Card Reseña -->

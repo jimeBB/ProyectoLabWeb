@@ -20,9 +20,18 @@ class ResenasController extends Controller
     public function index()
     {
         $resena = Resena::all();
-
         return view('resenas.index', ['resena' => $resena]);
     }
+
+    /*public function topQuery()
+    {
+        $top = Resena::table('resenas')->orderBy('likes', 'desc')->get();
+        return view('resenas.index', ['resena' => $top]);
+    }
+
+    public function cineQuery(){
+        $categoria = Resena::table('users')
+    }*/
 
     /**
      * Show the form for creating a new resource.
@@ -59,7 +68,7 @@ class ResenasController extends Controller
         $resena->categoria = $arr['categoria'];
 
         $resena->texto = $arr['texto'];
-        $resena->likes = 4;
+        $resena->likes = 0;
         $resena->usuario_id = $user->id;
 
         if ($request->hasFile('url')) {
@@ -80,7 +89,7 @@ class ResenasController extends Controller
         }
         // Else add a dummy image
         else {
-            $fileNameToStore = 'noimage.jpg';
+            $fileNameToStore = 'noimage.png';
         }
     }
 

@@ -16,28 +16,67 @@ class LandingController extends Controller
     public function index()
     {
         $resena = Resena::all();
-        
-       
         return view('landingPage.guest', ['resena' => $resena]);
     }
 
-    public function search(Request $request){
-      
+    public function topQuery()
+    {
+        $top = Resena::orderBy('likes', 'desc')->get();
+        return view('landingPage.guest', ['resena' => $top]);
+    }
+
+    public function newQuery()
+    {
+        $new = Resena::orderBy('created_at', 'desc')->get();
+        return view('landingPage.guest', ['resena' => $new]);
+    }
+
+    public function cineQuery()
+    {
+        $cine = Resena::where('categoria', 'cine')->get();
+        return view('landingPage.guest', ['resena' => $cine]);
+    }
+
+    public function videojuegosQuery()
+    {
+        $videojuegos = Resena::where('categoria', 'videojuegos')->get();
+        return view('landingPage.guest', ['resena' => $videojuegos]);
+    }
+
+    public function librosQuery()
+    {
+        $libros = Resena::where('categoria', 'libros')->get();
+        return view('landingPage.guest', ['resena' => $libros]);
+    }
+
+    public function seriesQuery()
+    {
+        $seriestv = Resena::where('categoria', 'tvseries')->get();
+        return view('landingPage.guest', ['resena' => $seriestv]);
+    }
+
+    public function otrosQuery()
+    {
+        $otros = Resena::where('categoria', 'otros')->get();
+        return view('landingPage.guest', ['resena' => $otros]);
+    }
+
+    public function search(Request $request)
+    {
         $resena = Resena::where([
             ['titulo', '!=', Null],
-            [function ($query) use ($request){
-                if(($termino = $request->termino)){
-                    $query->orWhere('titulo', 'LIKE', '%' . $termino . '%')->get();
+            [
+                function ($query) use ($request) {
+                    if (($termino = $request->termino)) {
+                        $query->orWhere('titulo', 'LIKE', '%' . $termino . '%')->get();
+                    }
                 }
-            }
             ]
         ])
-        ->orderBy("id", "desc")
-        ->paginate(10);
+            ->orderBy("id", "desc")
+            ->paginate(10);
 
         return view('landingpage.guest', ['resena' => $resena]);
-        
-
     }
 
     /**
@@ -115,13 +154,13 @@ class LandingController extends Controller
 
         return redirect()->route('resenas.index');
     }
- /**
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-   
+
 
 
     /**

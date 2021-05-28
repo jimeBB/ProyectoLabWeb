@@ -6,7 +6,8 @@ use App\Events\LikeEvent;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
-
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LandingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,10 +29,17 @@ Route::get('/event/{comment}/{id_escritor}/{id_usuario}', function ($comment, $i
     event(new LikeEvent($comment, $id_escritor, $id_usuario));
 });
 Route::resource('landingpage', 'LandingController');
+Route::get('/top', [LandingController::class, 'topQuery']);
+Route::get('/new', [LandingController::class, 'newQuery']);
+Route::get('/cine', [LandingController::class, 'cineQuery']);
+Route::get('/videojuegos', [LandingController::class, 'videojuegosQuery']);
+Route::get('/libros', [LandingController::class, 'librosQuery']);
+Route::get('/seriestv', [LandingController::class, 'seriesQuery']);
+Route::get('/otros', [LandingController::class, 'otrosQuery']);
+
 Route::resource('comentarios', 'ComentariosController')->middleware(['guest']);
 Route::resource('resenas', 'ResenasController')->middleware(['guest']);
 Route::resource('users', 'UsersController')->middleware(['guest', 'normaluser']);
-
 Route::get('register', 'AuthController@register')->name('auth.register');
 Route::post('register', 'AuthController@doRegister')->name('auth.do-register');
 Route::get('login', 'AuthController@login')->name('auth.login');
