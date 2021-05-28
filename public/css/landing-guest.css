@@ -28,14 +28,19 @@ _________________________
     .bi{
         color: black;
     }
-    
+
     .search-bar{
-        margin-left: 280px;
+        margin-left: 0 auto;
     }
     .search-input{
         width: 370px;
         height: 35px;
     }
+
+    .navbar-collapse{
+        flex-grow: unset !important;
+    }
+
     .btn-search-nav{
         height: 35px ;
         position: relative;
@@ -68,7 +73,7 @@ _________________________
         line-height: 0px;
         border-radius: 15px;
         background-color: #ff5e3a;
-        border-color: #ff5e3a;  
+        border-color: #ff5e3a;
     }
     /*
     _________________________
@@ -80,13 +85,13 @@ _________________________
     html, body {
         height: 100%;
         background-color: #e3e3e3;
-        
+
       }
-    
+
       .card-container{
           margin-top: 5%;
       }
-    
+
       .card {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -109,14 +114,14 @@ _________________________
         -ms-border-radius: 1rem;
         border-radius: 1rem;
         padding: 15px;
-        
+
     }
-    
+
     .review-author-data{
     font-size: 13px;
-    
+
     }
-    
+
     /* Imagen tarjeta */
     .card-image{
         width: 240px;
@@ -125,29 +130,29 @@ _________________________
     .card-image-review{
         margin-left: 30px;
     }
-    
+
     .review-title{
         font-size: 24px;
     }
-    
+
     .review-footer{
         margin-top: 38px;
-        
-    
+
+
     }
     .review-share{
         display: inline-block;
-        
+
     }
     .review-share svg{
         color: #272e4f;
     }
-    
-    
+
+
     .bi-chat-dots-fill{
         padding-left: 5px;
     }
-    
+
     .review-date-published{
         padding-right: 20px;
     }
@@ -155,7 +160,7 @@ _________________________
         position: relative;
         top: 5px;
     }
-    
+
     .share-icon{
         margin-left: 30px;
     }
@@ -169,11 +174,11 @@ _________________________
         padding-right: 120px;
         color: #2c365d;
     }
-    
+
     .tags a{
         color: #2c365d;
     }
-    
+
     .nav-tools{
        margin-top: 15px;
         background-color: #fafafa;
@@ -182,40 +187,40 @@ _________________________
         -webkit-border-radius: 1rem;
         -moz-border-radius: 1rem;
         -ms-border-radius: 1rem;
-        border-radius: 1rem; 
+        border-radius: 1rem;
         padding: 4px;
-        
+
     }
-    
+
     .nav-tools .nav-link{
         margin-right: 20px;
         margin-left: 65px;
     }
-    
+
     .nav-link svg{
         margin-right: 5px;
     }
-    
-    
+
+
     /* // Extra small devices (portrait phones, less than 576px)
     // No media query since this is the default in Bootstrap */
-    
+
     /* // Small devices (landscape phones, 576px and up) */
-    @media (min-width: 576px) { 
-        
+    @media (min-width: 576px) {
+
      }
-    
+
      /* Medium devices (tablets, 768px and up) */
-    @media (min-width: 768px) { 
-    
+    @media (min-width: 768px) {
+
      }
-    
+
     /* // Large devices (desktops, 992px and up) */
-    @media (min-width: 992px) { 
-    
+    @media (min-width: 992px) {
+
      }
-    
+
     /* // Extra large devices (large desktops, 1200px and up) */
-    @media (min-width: 1200px) { 
-    
+    @media (min-width: 1200px) {
+
     }
