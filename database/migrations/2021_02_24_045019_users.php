@@ -20,7 +20,9 @@ class Users extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('role')->default('user');
-            $table->date('birthday');
+            $table->string('provider_id')->default('0123456789');
+            $table->string('provider')->default('local');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

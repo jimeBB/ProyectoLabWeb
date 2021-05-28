@@ -65,7 +65,7 @@ tr:nth-child(even) {
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->nombre }}</td>
                 <td>{{ $item->titulo }}</td>
-                <td>{{ $item->fecha_creacion }}</td>
+                <td>{{ $item->created_at }}</td>
                 <td>{{ $item->categoria }}</td>
                 <td>{{ $item->usuario_id }}</td>
                 <td>

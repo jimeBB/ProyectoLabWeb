@@ -31,10 +31,10 @@
             </div>
 
 
-            <div class="form-label-group mt-3">
+            <!--<div class="form-label-group mt-3">
                 <label>Ingrese su fecha de nacimiento</label>
                 <input type="date" name="birthday" class="form-control" required>
-            </div>
+            </div>-->
 
             <div class="form-label-group mt-3">
                 <input type="password" name="password" class="form-control" placeholder="Contraseña" required>

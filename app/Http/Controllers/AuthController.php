@@ -27,13 +27,14 @@ class AuthController extends Controller
             'name' => 'required',
             'lname' => 'required',
             'email' => 'required|email:rfc,dns|unique:users',
-            'birthday' => 'date',
             'password' => 'required|confirmed|min:6',
-
         ])->validate();
 
         $data['password'] = Hash::make($data['password']);
         $data['role'] = "user";
+        $data['povider'] = 'local';
+        $data['povider_id'] = '0123456789';
+        //$data['remember_token'] = '0987654321';
 
         user::create($data);
 

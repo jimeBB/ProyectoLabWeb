@@ -17,10 +17,10 @@ class Resenas extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('titulo');
-            //$table->date('fecha_creacion');
+            $table->date('fecha_creacion');
             $table->string('categoria');
             $table->string('url');
-            $table->string('texto');
+            $table->longText('texto');
             $table->string('likes');
             $table->timestamps();
             $table->integer('usuario_id')->unsigned();

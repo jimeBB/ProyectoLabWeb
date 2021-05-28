@@ -55,7 +55,7 @@ class ResenasController extends Controller
         $resena = new Resena();
         $resena->nombre = $user->name;
         $resena->titulo = $arr['titulo'];
-        //$resena->fecha_creacion = date("Y-m-d");
+        $resena->fecha_creacion = date("Y-m-d");
         $resena->categoria = $arr['categoria'];
 
         $resena->texto = $arr['texto'];

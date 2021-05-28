@@ -3,7 +3,9 @@
 use App\Http\Controllers\ResenasController;
 use Illuminate\Support\Facades\Route;
 use App\Events\LikeEvent;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
+use App\Models\User;
 
 
 /*
@@ -46,45 +48,55 @@ Route::get('/auth/facebook/redirect', function () {
 });
 
 Route::get('/auth/facebook/callback', function () {
-    $user = Socialite::driver('facebook')->user();
+    $fbUser = Socialite::driver('github')->user();
 
-    // OAuth 2.0 providers...
-    $token = $user->token;
-    $refreshToken = $user->refreshToken;
-    $expiresIn = $user->expiresIn;
+    $token = $fbUser->token;
+    $refreshToken = $fbUser->refreshToken;
+    $expiresIn = $fbUser->expiresIn;
 
-    // All providers...
-    $user->getId();
-    $user->getNickname();
-    $user->getName();
-    $user->getEmail();
-    $user->getAvatar();
+    $user = User::where('provider_id', $fbUser->getId())->first();
+
+    if (!$user) {
+        $user = User::create([
+            'email' => $fbUser->getEmail(),
+            'name' => $fbUser->getName(),
+            'lname' => '',
+            'password' => '',
+            'provider_id' => $fbUser->getId(),
+            'provider' => 'github',
+        ]);
+    }
+
+    Auth::login($user, true);
+
+    return redirect()->route('landingpage.index');
 });
-
-/*Route::get('auth/facebook', [FbController::class, 'redirectToFacebook']);
-
-Route::get('auth/facebook', [FbController::class, 'facebookSignin']);*/
 
 Route::get('/auth/github/redirect', function () {
     return Socialite::driver('github')->redirect();
 });
 
 Route::get('/auth/github/callback', function () {
-    $user = Socialite::driver('github')->user();
+    $gitUser = Socialite::driver('github')->user();
 
-    // OAuth 2.0 providers...
-    $token = $user->token;
-    $refreshToken = $user->refreshToken;
-    $expiresIn = $user->expiresIn;
+    $token = $gitUser->token;
+    $refreshToken = $gitUser->refreshToken;
+    $expiresIn = $gitUser->expiresIn;
 
-    // OAuth 1.0 providers...
-    $token = $user->token;
-    $tokenSecret = $user->tokenSecret;
+    $user = User::where('provider_id', $gitUser->getId())->first();
 
-    // All providers...
-    $user->getId();
-    $user->getNickname();
-    $user->getName();
-    $user->getEmail();
-    $user->getAvatar();
+    if (!$user) {
+        $user = User::create([
+            'email' => $gitUser->getEmail(),
+            'name' => $gitUser->getName(),
+            'lname' => '',
+            'password' => '',
+            'provider_id' => $gitUser->getId(),
+            'provider' => 'github',
+        ]);
+    }
+
+    Auth::login($user, true);
+
+    return redirect()->route('landingpage.index');
 });

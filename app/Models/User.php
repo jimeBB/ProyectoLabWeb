@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -21,9 +22,10 @@ class User extends Authenticatable
         'lname',
         'email',
         'password',
-        'birthday',
+        //'birthday',
         'role',
-        'facebook_id',
+        'provider_id',
+        'provider',
     ];
 
     /**
