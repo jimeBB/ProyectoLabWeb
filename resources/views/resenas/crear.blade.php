@@ -35,7 +35,7 @@
             </div>
             <div class="image-uploader">
                 <h1 style="display:inline;">Sube una imagen para la portada</h1>
-                <input name="url" type="file" id="img"  required>
+                <input name="url" type="file" id="img" >
             </div>
         </div>
 

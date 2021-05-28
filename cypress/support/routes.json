@@ -1,0 +1,478 @@
+{
+  "ignition.healthCheck": {
+    "name": "ignition.healthCheck",
+    "domain": null,
+    "action": "Facade\\Ignition\\Http\\Controllers\\HealthCheckController",
+    "uri": "_ignition/health-check",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "ignition.executeSolution": {
+    "name": "ignition.executeSolution",
+    "domain": null,
+    "action": "Facade\\Ignition\\Http\\Controllers\\ExecuteSolutionController",
+    "uri": "_ignition/execute-solution",
+    "method": [
+      "POST"
+    ]
+  },
+  "ignition.shareReport": {
+    "name": "ignition.shareReport",
+    "domain": null,
+    "action": "Facade\\Ignition\\Http\\Controllers\\ShareReportController",
+    "uri": "_ignition/share-report",
+    "method": [
+      "POST"
+    ]
+  },
+  "ignition.scripts": {
+    "name": "ignition.scripts",
+    "domain": null,
+    "action": "Facade\\Ignition\\Http\\Controllers\\ScriptController",
+    "uri": "_ignition/scripts/{script}",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "ignition.styles": {
+    "name": "ignition.styles",
+    "domain": null,
+    "action": "Facade\\Ignition\\Http\\Controllers\\StyleController",
+    "uri": "_ignition/styles/{style}",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "cypress.factory": {
+    "name": "cypress.factory",
+    "domain": null,
+    "action": "Laracasts\\Cypress\\Controllers\\CypressController@factory",
+    "uri": "__cypress__/factory",
+    "method": [
+      "POST"
+    ]
+  },
+  "cypress.login": {
+    "name": "cypress.login",
+    "domain": null,
+    "action": "Laracasts\\Cypress\\Controllers\\CypressController@login",
+    "uri": "__cypress__/login",
+    "method": [
+      "POST"
+    ]
+  },
+  "cypress.logout": {
+    "name": "cypress.logout",
+    "domain": null,
+    "action": "Laracasts\\Cypress\\Controllers\\CypressController@logout",
+    "uri": "__cypress__/logout",
+    "method": [
+      "POST"
+    ]
+  },
+  "cypress.artisan": {
+    "name": "cypress.artisan",
+    "domain": null,
+    "action": "Laracasts\\Cypress\\Controllers\\CypressController@artisan",
+    "uri": "__cypress__/artisan",
+    "method": [
+      "POST"
+    ]
+  },
+  "cypress.run-php": {
+    "name": "cypress.run-php",
+    "domain": null,
+    "action": "Laracasts\\Cypress\\Controllers\\CypressController@runPhp",
+    "uri": "__cypress__/run-php",
+    "method": [
+      "POST"
+    ]
+  },
+  "cypress.csrf-token": {
+    "name": "cypress.csrf-token",
+    "domain": null,
+    "action": "Laracasts\\Cypress\\Controllers\\CypressController@csrfToken",
+    "uri": "__cypress__/csrf_token",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "cypress.routes": {
+    "name": "cypress.routes",
+    "domain": null,
+    "action": "Laracasts\\Cypress\\Controllers\\CypressController@routes",
+    "uri": "__cypress__/routes",
+    "method": [
+      "POST"
+    ]
+  },
+  "": {
+    "name": null,
+    "domain": null,
+    "action": "Closure",
+    "uri": "auth/github/callback",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "landingpage.index": {
+    "name": "landingpage.index",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\LandingController@index",
+    "uri": "landingpage",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "landingpage.create": {
+    "name": "landingpage.create",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\LandingController@create",
+    "uri": "landingpage/create",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "landingpage.store": {
+    "name": "landingpage.store",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\LandingController@store",
+    "uri": "landingpage",
+    "method": [
+      "POST"
+    ]
+  },
+  "landingpage.show": {
+    "name": "landingpage.show",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\LandingController@show",
+    "uri": "landingpage/{landingpage}",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "landingpage.edit": {
+    "name": "landingpage.edit",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\LandingController@edit",
+    "uri": "landingpage/{landingpage}/edit",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "landingpage.update": {
+    "name": "landingpage.update",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\LandingController@update",
+    "uri": "landingpage/{landingpage}",
+    "method": [
+      "PUT",
+      "PATCH"
+    ]
+  },
+  "landingpage.destroy": {
+    "name": "landingpage.destroy",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\LandingController@destroy",
+    "uri": "landingpage/{landingpage}",
+    "method": [
+      "DELETE"
+    ]
+  },
+  "comentarios.index": {
+    "name": "comentarios.index",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\ComentariosController@index",
+    "uri": "comentarios",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "comentarios.create": {
+    "name": "comentarios.create",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\ComentariosController@create",
+    "uri": "comentarios/create",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "comentarios.store": {
+    "name": "comentarios.store",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\ComentariosController@store",
+    "uri": "comentarios",
+    "method": [
+      "POST"
+    ]
+  },
+  "comentarios.show": {
+    "name": "comentarios.show",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\ComentariosController@show",
+    "uri": "comentarios/{comentario}",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "comentarios.edit": {
+    "name": "comentarios.edit",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\ComentariosController@edit",
+    "uri": "comentarios/{comentario}/edit",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "comentarios.update": {
+    "name": "comentarios.update",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\ComentariosController@update",
+    "uri": "comentarios/{comentario}",
+    "method": [
+      "PUT",
+      "PATCH"
+    ]
+  },
+  "comentarios.destroy": {
+    "name": "comentarios.destroy",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\ComentariosController@destroy",
+    "uri": "comentarios/{comentario}",
+    "method": [
+      "DELETE"
+    ]
+  },
+  "resenas.index": {
+    "name": "resenas.index",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\ResenasController@index",
+    "uri": "resenas",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "resenas.create": {
+    "name": "resenas.create",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\ResenasController@create",
+    "uri": "resenas/create",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "resenas.store": {
+    "name": "resenas.store",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\ResenasController@store",
+    "uri": "resenas",
+    "method": [
+      "POST"
+    ]
+  },
+  "resenas.show": {
+    "name": "resenas.show",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\ResenasController@show",
+    "uri": "resenas/{resena}",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "resenas.edit": {
+    "name": "resenas.edit",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\ResenasController@edit",
+    "uri": "resenas/{resena}/edit",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "resenas.update": {
+    "name": "resenas.update",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\ResenasController@update",
+    "uri": "resenas/{resena}",
+    "method": [
+      "PUT",
+      "PATCH"
+    ]
+  },
+  "resenas.destroy": {
+    "name": "resenas.destroy",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\ResenasController@destroy",
+    "uri": "resenas/{resena}",
+    "method": [
+      "DELETE"
+    ]
+  },
+  "users.index": {
+    "name": "users.index",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\UsersController@index",
+    "uri": "users",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "users.create": {
+    "name": "users.create",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\UsersController@create",
+    "uri": "users/create",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "users.store": {
+    "name": "users.store",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\UsersController@store",
+    "uri": "users",
+    "method": [
+      "POST"
+    ]
+  },
+  "users.show": {
+    "name": "users.show",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\UsersController@show",
+    "uri": "users/{user}",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "users.edit": {
+    "name": "users.edit",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\UsersController@edit",
+    "uri": "users/{user}/edit",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "users.update": {
+    "name": "users.update",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\UsersController@update",
+    "uri": "users/{user}",
+    "method": [
+      "PUT",
+      "PATCH"
+    ]
+  },
+  "users.destroy": {
+    "name": "users.destroy",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\UsersController@destroy",
+    "uri": "users/{user}",
+    "method": [
+      "DELETE"
+    ]
+  },
+  "auth.register": {
+    "name": "auth.register",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\AuthController@register",
+    "uri": "register",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "auth.do-register": {
+    "name": "auth.do-register",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\AuthController@doRegister",
+    "uri": "register",
+    "method": [
+      "POST"
+    ]
+  },
+  "auth.login": {
+    "name": "auth.login",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\AuthController@login",
+    "uri": "login",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "auth.do-login": {
+    "name": "auth.do-login",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\AuthController@doLogin",
+    "uri": "login",
+    "method": [
+      "POST"
+    ]
+  },
+  "auth.logout": {
+    "name": "auth.logout",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\AuthController@logout",
+    "uri": "logout",
+    "method": [
+      "GET",
+      "HEAD",
+      "POST",
+      "PUT",
+      "PATCH",
+      "DELETE",
+      "OPTIONS"
+    ]
+  },
+  "resena.show-user": {
+    "name": "resena.show-user",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\ResenasController@showUser",
+    "uri": "showUser/{resena}",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "landingpage.search": {
+    "name": "landingpage.search",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\LandingController@search",
+    "uri": "landingpageSearch",
+    "method": [
+      "GET",
+      "HEAD"
+    ]
+  },
+  "resena.likes": {
+    "name": "resena.likes",
+    "domain": null,
+    "action": "App\\Http\\Controllers\\ResenasController@updateLikes",
+    "uri": "user/{id}",
+    "method": [
+      "PUT"
+    ]
+  }
+}
