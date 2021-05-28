@@ -43,11 +43,6 @@
                     <img src="../imgs/comment.png" class="icon-act">
                     <span class="tooltiptext">Comments</span>
                 </h1>
-                <h1 style="display:inline;" class="share">
-                    44
-                    <img src="../imgs/share.png" class="icon-act">
-                    <span class="tooltiptext">Share</span>
-                </h1>
             </div>
         </div>
     </div>
