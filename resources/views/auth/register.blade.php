@@ -3,6 +3,10 @@
 
 
 @section('content')
+    <div class="align-self-center text-center my-3">
+        <img src="../imgs/logo-prov.png" width="150px" height="150px"  alt="logo">
+        <p style="color: darkorange; font-size: x-large; font-weight:bold;"> El Rincón del Bisquet </p>
+    </div>
     <div class="card-body">
 
         @if ($errors->any())
@@ -15,7 +19,7 @@
         </div>
         @endif
 
-        <h5 class="card-title text-center">Registro de usuario</h5>
+        <h5 class="card-title text-center"> Registrate</h5>
         <hr class="my-4">
         <form action="{{ route('auth.do-register') }}" method="POST">
             @csrf

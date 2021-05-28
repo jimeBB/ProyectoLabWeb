@@ -8,6 +8,11 @@ _________________________
 .bg-light{
     background-color: #fafafa!important;
     }
+    .navbar-brand{
+        color: darkorange;
+        font-size: 20;
+        font-weight:bold;
+    }
     .nav-item-profile{
         align-self: center;
     }
@@ -32,13 +37,14 @@ _________________________
     .search-bar{
         margin-left: 0 auto;
     }
+
     .search-input{
         width: 370px;
         height: 35px;
     }
 
     .navbar-collapse{
-        flex-grow: unset !important;
+        flex-grow: 0 !important;
     }
 
     .btn-search-nav{

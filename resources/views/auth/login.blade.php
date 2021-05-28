@@ -1,6 +1,11 @@
 @extends('layouts.regis')
 
 @section('content')
+
+    <div class="align-self-center text-center my-3">
+        <img src="../imgs/logo-prov.png" width="150px" height="150px"  alt="logo">
+        <p style="color: darkorange; font-size: x-large; font-weight:bold;"> El Rincón del Bisquet </p>
+    </div>
     <div class="card-body">
         <h5 class="card-title text-center">Ingresar</h5>
 
