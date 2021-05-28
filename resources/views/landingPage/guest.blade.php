@@ -16,35 +16,31 @@
                     <div class="col-md-12">
                         <!-- Navbar de filtrado -->
                         <nav class="nav nav-tools">
-                            <a class="nav-link active" aria-current="page" href="/top">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-star-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                </svg>
+                            <a class="nav-link navIcons" aria-current="page" href="/top">
+                                <i class="fa fa-star"></i>
                                 Top
                             </a>
-                            <a class="nav-link" href="/new">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
-                                    <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z" />
-                                </svg>
+                            <a class="nav-link navIcons" href="/new">
+                                <i class="fa fa-bolt"></i>
                                 New
                             </a>
-                            <a class="nav-link" href="/cine">
+                            <a class="nav-link navIcons" href="/cine">
+                                <i class="fa fa-video-camera"></i>
                                 Cine
                             </a>
-                            <a class="nav-link" href="/videojuegos">
+                            <a class="nav-link navIcons" href="/videojuegos">
+                                <i class="fa fa-gamepad"></i>
                                 Videojuegos
                             </a>
-                            <a class="nav-link" href="/libros">
+                            <a class="nav-link navIcons" href="/libros">
+                                <i class="fa fa-book"></i>
                                 Libros
                             </a>
-                            <a class="nav-link" href="/seriestv">
+                            <a class="nav-link navIcons" href="/seriestv">
+                                <i class="fa fa-tv"></i>
                                 Series de TV
                             </a>
-                            <a class="nav-link" href="/otros">
+                            <a class="nav-link navIcons" href="/otros">
                                 Otros
                             </a>
                         </nav>

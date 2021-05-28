@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <!-- Brand/logo -->
-            <a class="navbar-brand" href="{{route('landingpage.index')}}" style="color: darkorange; font-size: x-large; font-weight:bold;">
+            <a class="navbar-brand logoText" href="{{route('landingpage.index')}}" style=" color: darkorange; font-size: 20; font-weight:bold;">
                 <img src="../imgs/logo-prov.png" width="50" height="50" alt="logo">
                 El Rincón del Bisquet
             </a>
@@ -53,7 +53,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <!-- Brand/logo -->
-            <a class="navbar-brand" href="{{route('landingpage.index')}}" style="color: darkorange; font-size: 25; font-weight:bold;">
+            <a class="navbar-brand logoText" href="{{route('landingpage.index')}}" style=" color: darkorange; font-size: 20; font-weight:bold;">
                 <img src="../imgs/logo-prov.png" width="50" height="50" alt="logo">
                 El Rincón del Bisquet
             </a>
