@@ -7,8 +7,8 @@
     <div id="body-container">
         <div id="review-container">
             <div class="info">
-                <h1 style="display:inline;">{{$resena->titulo}}</h1>
-                <h2 style="display:inline;">{{$resena->nombre}}</h3>
+                <h1 style="display:inline;">{{$resena->titulo}}</h1><br>
+                <h2 style="display:inline;">{{$resena->nombre}}</h2>
                 <h3 style="display:inline;">{{$resena->fecha_creacion}}</h3>
             </div><br>
             <div class="tags">
@@ -33,15 +33,15 @@
             </div>-->
 
             <div class="reactions">
-                <h1 style="display:inline;" class="like">
+                <h1 style="display:inline;" class="like counter" >
                     {{$resena->likes}}
                     <img src="../imgs/likes.png" class="icon-act">
-                    <span class="tooltiptext">Like</span>
+                    <span class="tooltiptext">Like counter</span>
                 </h1>
                 <h1 style="display:inline;" class="comments">
-                    20
-                    <img src="../imgs/comment.png" class="icon-act">
-                    <span class="tooltiptext">Comments</span>
+                    {{$resena->comments}}
+                    <a href="#comments-section"><img src="../imgs/comment.png" class="icon-act"></a>
+                    <span class="tooltiptext">Make a comment!</span>
                 </h1>
             </div>
         </div>
@@ -88,7 +88,9 @@
         @foreach($resena->comentario as $comentario)
             <div class="generic-comment">
                 <div class="comment-info">
-                    <img src="imgs/profile.png" style="display:inline;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+                    </svg>
                     <div>
                         <h1 style="display:inline;">{{$comentario->nombre}}</h1>
                         <h1 style="display:inline;">{{$comentario->likes}}</h1>
