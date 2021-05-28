@@ -30,7 +30,6 @@ Route::get('/event/{comment}/{id_escritor}/{id_usuario}', function ($comment, $i
 Route::resource('landingpage', 'LandingController');
 Route::resource('comentarios', 'ComentariosController')->middleware(['guest']);
 Route::resource('resenas', 'ResenasController')->middleware(['guest']);
-
 Route::resource('users', 'UsersController')->middleware(['guest', 'normaluser']);
 
 Route::get('register', 'AuthController@register')->name('auth.register');
